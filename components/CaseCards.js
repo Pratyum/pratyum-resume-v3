@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import React from 'react';
 import styles from '../styles/CaseCards.module.css';
-import Image from 'next/image';
 
 const CaseCards = ({ caseData, isBlurred }) => {
     const { url, title, desc, textColorOverride, tag } = caseData;

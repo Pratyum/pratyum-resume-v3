@@ -1,10 +1,10 @@
-import React from 'react';
+import CaseCardsLayout from '../components/CaseCardsLayout';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
-import { motion } from 'framer-motion';
-import CaseCardsLayout from '../components/CaseCardsLayout';
+import React from 'react';
 import { cardsImages } from '../assets/data/home-data';
+import { motion } from 'framer-motion';
+import styles from '../styles/Home.module.css';
 import { useAppContext } from '../context/AppContext';
 
 const Home = () => {
@@ -26,8 +26,8 @@ const Home = () => {
             transition={{ delay: 2.2 }}
         >
             <Head>
-                <title>Home | Build in Amsterdam Clone</title>
-                <meta name='description' content='buildinamsterdam clone' />
+                <title>Pratyum Jagannath</title>
+                <meta name='description' content='Personal Resume for Pratyum Jagannath' />
             </Head>
 
             <motion.div
@@ -36,9 +36,9 @@ const Home = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.2 }}
             >
-                <div className={styles.awards}>AWWWARDS</div>
+                <div className={styles.awards}>Pratyum Jagannath</div>
                 <div className={styles.awards_details}>
-                    E-commerce of the Year '17, '18, '19 & '20
+                    Web3 Entusiast | Full Stack Developer
                 </div>
             </motion.div>
 
@@ -49,14 +49,14 @@ const Home = () => {
                         animate={{ height: getHeadingHeight(view) }}
                         transition={{ delay: 0 }}
                     >
-                        <div className={styles.heading}>we build</div>
+                        <div className={styles.heading}>Hi There! 👋</div>
                     </motion.div>
                     <motion.div
                         initial={{ height: 0 }}
                         animate={{ height: getHeadingHeight(view) }}
                         transition={{ delay: 0.4 }}
                     >
-                        <div className={styles.heading}>digital</div>
+                        <div className={styles.heading}>building</div>
                     </motion.div>
                     <motion.div
                         initial={{ height: 0 }}
@@ -64,7 +64,7 @@ const Home = () => {
                         transition={{ delay: 0.8 }}
                     >
                         <div className={[styles.heading, styles.ml].join(' ')}>
-                            flagship
+                            Cool things
                         </div>
                     </motion.div>
                     <motion.div
@@ -72,7 +72,7 @@ const Home = () => {
                         animate={{ height: getHeadingHeight(view) }}
                         transition={{ delay: 1.2 }}
                     >
-                        <div className={styles.heading}>stores</div>
+                        <div className={styles.heading}>everyday</div>
                     </motion.div>
                 </h1>
                 <motion.div
@@ -82,13 +82,12 @@ const Home = () => {
                 >
                     <div className={styles.text_container}>
                         <div className={styles.text}>
-                            We believe our industry is blinded by big numbers.
-                            While buying decisions are based on emotion.
+                            My name is Pratyum but you can call me PJ. I'm a full stack developer
                         </div>
                         <div className={styles.link_container}>
                             <div className={styles.dot}></div>
                             <Link className={styles.link} href={'/about'}>
-                                about us
+                                about me
                             </Link>
                         </div>
                     </div>
