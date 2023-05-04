@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from '../styles/Header.module.css';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import React from 'react';
+import { motion } from 'framer-motion';
+import styles from '../styles/Header.module.css';
 
 const Header = ({ logoColor, delay }) => {
     return (
@@ -18,7 +18,7 @@ const Header = ({ logoColor, delay }) => {
                             '--logo-color': logoColor,
                         }}
                     >
-                        BiA.
+                        PJ
                     </div>
                 </Link>
             </motion.div>
