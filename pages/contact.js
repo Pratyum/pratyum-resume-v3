@@ -1,12 +1,12 @@
-import React from 'react';
+import CaseCardsLayout from '../components/CaseCardsLayout';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Contact.module.css';
-import { motion } from 'framer-motion';
-import CaseCardsLayout from '../components/CaseCardsLayout';
-import { contactImages } from '../assets/data/contact-data';
-import { useAppContext } from '../context/AppContext';
+import React from 'react';
 import SlidingText from '../components/SlidingText';
+import { contactImages } from '../assets/data/contact-data';
+import { motion } from 'framer-motion';
+import styles from '../styles/Contact.module.css';
+import { useAppContext } from '../context/AppContext';
 
 const Contact = () => {
     const { view } = useAppContext();
@@ -22,8 +22,8 @@ const Contact = () => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Contact | Build in Amsterdam Clone</title>
-                <meta name='description' content='buildinamsterdam clone' />
+                <title>Contact | Pratyum Jagan</title>
+                <meta name='description' content='Pratyum Jagannath | Contact' />
             </Head>
 
             <div className={styles.top}>
@@ -37,29 +37,15 @@ const Contact = () => {
                 <h1 className={styles.heading1}>Get in touch</h1>
                 <div className={styles.us_container}>
                     <div>
-                        <h2 className={styles.heading2}>write us</h2>
+                        <h2 className={styles.heading2}>Write to me</h2>
                         <div className={styles.sliding_text}>
-                            <SlidingText text={'hello@buildinamsterdam.com'} />
+                            <SlidingText text={'hello@pratyumjagan.com'} />
                         </div>
                     </div>
                     <div>
-                        <h2 className={styles.heading2}>call us</h2>
+                        <h2 className={styles.heading2}>Call Me</h2>
                         <div className={styles.sliding_text}>
-                            <SlidingText text={'+31 (0)20 223 00 66'} />
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className={styles.heading2}>join us</h2>
-                        <div className={styles.sliding_text}>
-                            <SlidingText text={'jobs.buildinamsterdam.com'} />
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className={styles.heading2}>visit us</h2>
-                        <div className={styles.sliding_text}>
-                            <SlidingText
-                                text={'Baarsjesweg 285-286 | 1058 AE Amsterdam'}
-                            />
+                            <SlidingText text={'+91 94444 89090'} />
                         </div>
                     </div>
                     <div>
@@ -69,7 +55,7 @@ const Contact = () => {
                                 styles.custom_margin,
                             ].join(' ')}
                         >
-                            follow us
+                            Other Contact Links
                         </h2>
                         <ul className={styles.ul}>
                             <li className={styles.sliding_text}>

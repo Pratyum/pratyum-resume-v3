@@ -1,11 +1,12 @@
-import React, { useRef, useEffect, useState, useMemo } from 'react';
-import styles from '../styles/About.module.css';
-import { aboutData } from '../assets/data/about-data';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useScroll } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import SlidingText from '../components/SlidingText';
+
 import ResponsiveCardsLayout from '../components/ResponsiveCardsLayout';
+import SlidingText from '../components/SlidingText';
+import { aboutData } from '../assets/data/about-data';
+import styles from '../styles/About.module.css';
 import { useAppContext } from '../context/AppContext';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
     const { view } = useAppContext();
@@ -70,8 +71,7 @@ const About = () => {
             <section className={styles.section1}>
                 <div className={styles.intro_text_wrapper}>
                     <p className={styles.intro_text}>
-                        We are Build in Amsterdam. We are a branding agency
-                        specialised in e-commerce.
+                    Driven by passion, I think of futuristic ideas and strive to make it a possibility today.
                     </p>
                 </div>
                 <div
@@ -119,7 +119,7 @@ const About = () => {
                                 inView && styles.final_top_p,
                             ].join(' ')}
                         >
-                            We believe our industry
+                            Always ready to build cool projects
                         </p>
                         <p
                             className={[
@@ -127,10 +127,10 @@ const About = () => {
                                 inView && styles.final_bottom_p,
                             ].join(' ')}
                         >
-                            while buying decisions
+                            Web3 and AI Entusiast
                         </p>
                     </div>
-                    <div className={styles.section2_text_wrapper}>
+                    {/* <div className={styles.section2_text_wrapper}>
                         <p
                             className={[
                                 styles.initial_top_p,
@@ -147,7 +147,7 @@ const About = () => {
                         >
                             are driven by emotion.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
@@ -190,10 +190,7 @@ const About = () => {
                                         className={styles.section3_text_wrapper}
                                     >
                                         <div className={styles.section3_text}>
-                                            By combining strategy, branding &
-                                            e-commerce, we build digital
-                                            flagship stores that go beyond logic
-                                            & redefine conversion.
+                                        I believe in optimal programming while I build knowledge base in specific areas viz. web development and embedded technology – the gateway for the future.
                                         </div>
                                         <div className={styles.section3_link}>
                                             <a href='#'>
@@ -217,7 +214,7 @@ const About = () => {
                                         }}
                                     >
                                         <img
-                                            src='/images/about/section3-1.webp'
+                                            src='/images/nft_mint.webp'
                                             alt='mammut'
                                         />
                                         <div
@@ -235,14 +232,14 @@ const About = () => {
                                             <span
                                                 className={styles.image_title}
                                             >
-                                                Mammut
+                                                NFT Minter
                                             </span>
                                             <span className={styles.image_dot}>
                                                 {' '}
                                                 ·{' '}
                                             </span>
                                             <span className={styles.image_desc}>
-                                                Moved by mountains
+                                                Mint your own NFTs
                                             </span>
                                         </div>
                                     </div>
@@ -272,7 +269,7 @@ const About = () => {
                                         }}
                                     >
                                         <img
-                                            src='/images/about/section3-2.webp'
+                                            src='/images/uscan.webp'
                                             alt='moooi'
                                         />
                                         <div
@@ -290,14 +287,14 @@ const About = () => {
                                             <span
                                                 className={styles.image_title}
                                             >
-                                                Mooi
+                                                uScan
                                             </span>
                                             <span className={styles.image_dot}>
                                                 {' '}
                                                 ·{' '}
                                             </span>
                                             <span className={styles.image_desc}>
-                                                Multi-sensory flagship store
+                                                A Barcode Scanner to mark collection of goodie bags
                                             </span>
                                         </div>
                                     </div>
@@ -327,7 +324,7 @@ const About = () => {
                                         }}
                                     >
                                         <img
-                                            src='/images/about/section3-3.webp'
+                                            src='/images/mdp_poster.webp'
                                             alt='suitsupply'
                                         />
                                         <div
@@ -345,14 +342,14 @@ const About = () => {
                                             <span
                                                 className={styles.image_title}
                                             >
-                                                Suitsupply
+                                                MDP
                                             </span>
                                             <span className={styles.image_dot}>
                                                 {' '}
                                                 ·{' '}
                                             </span>
                                             <span className={styles.image_desc}>
-                                                Creative partnership
+                                                Build a robot to navigate a maze
                                             </span>
                                         </div>
                                     </div>
@@ -367,9 +364,7 @@ const About = () => {
             <section className={styles.section4}>
                 <div className={styles.section4_text_wrapper}>
                     <p>
-                        We are an international team of 40+ passionate
-                        designers, developers, brand strategists & data
-                        analysts.
+                        TODO: Add a blockquote
                     </p>
                     <div>
                         <a href='#'>
@@ -383,7 +378,7 @@ const About = () => {
             {/* section 5 - our expertise */}
             <section className={styles.section5}>
                 <header className={styles.section5_header}>
-                    <h2>our expertise</h2>
+                    <h2>My Experience</h2>
                 </header>
                 <div className={styles.section5_list_wrapper}>
                     {sectionFiveData.map((item, idx) => (
@@ -402,7 +397,7 @@ const About = () => {
             {/* section 6 - stats & facts */}
             <section className={styles.section6}>
                 <header className={styles.section6_header}>
-                    <h2>stats&facts</h2>
+                    <h2>stats & facts</h2>
                 </header>
                 <div className={styles.section6_list_wrapper}>
                     {sectionSixData.map((item, idx) => (
@@ -425,17 +420,17 @@ const About = () => {
             <section className={styles.section7}>
                 <div className={styles.section7_wrapper}>
                     <div className={styles.section7_text_wrapper}>
-                        <h2>Join us</h2>
-                        <a href='#'>
+                        <h2>Wanna Say Hi?</h2>
+                        <a href='/contact'>
                             <SlidingText text={'reach out'} />
                         </a>
                     </div>
                 </div>
                 <div className={styles.section7_wrapper}>
                     <div className={styles.section7_text_wrapper}>
-                        <h2>Work with us</h2>
-                        <a href='#'>
-                            <SlidingText text={'introduce yourself'} />
+                        <h2>Check out my projects</h2>
+                        <a href='/cases'>
+                            <SlidingText text={'Click here'} />
                         </a>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import styles from '../styles/MenuButton.module.css';
+
+import Image from 'next/image';
 import { motion } from 'framer-motion';
+import styles from '../styles/MenuButton.module.css';
 import { useAppContext } from '../context/AppContext';
 import { useRouter } from 'next/router';
 
@@ -70,10 +72,11 @@ const MenuButton = () => {
             <motion.div
                 className={[styles.wrapper, getColorClass()].join(' ')}
                 onClick={handleButtonClick}
+                role='navigation'
             >
-                <nav>
-                    <button className={styles.button}></button>
-                </nav>
+                    <button className={styles.button}>
+                        <Image src={'/images/svg/logo.svg'} width={30} height={30} />
+                    </button>
             </motion.div>
             <motion.div>
                 <svg

@@ -1,32 +1,31 @@
 export const contactImages = [
     {
-        url: '/images/contact/contact1.webp',
+        url: '/images/contact/1.webp',
         title: '1',
         col: 'left',
     },
     {
-        url: '/images/contact/contact2.webp',
+        url: '/images/contact/2.webp',
         title: '2',
-        col: 'left',
+        col: 'right',
     },
     {
-        url: '/images/contact/contact3.webp',
+        url: '/images/contact/3.webp',
         title: '3',
         col: 'left',
     },
     {
-        url: '/images/contact/contact4.webp',
+        url: '/images/contact/4.webp',
         title: '4',
         col: 'right',
     },
     {
-        url: '/images/contact/contact5.webp',
+        url: '/images/contact/5.webp',
         title: '5',
         col: 'right',
-    },
-    {
-        url: '/images/contact/contact6.webp',
+    }, {
+        url: '/images/contact/6.webp',
         title: '6',
-        col: 'right',
+        col: 'left',
     },
 ];
