@@ -1,1 +1,1 @@
-https://www.buildinamsterdam.com/
+https://pratyumjagan.in

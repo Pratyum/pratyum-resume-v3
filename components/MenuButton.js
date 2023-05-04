@@ -75,7 +75,7 @@ const MenuButton = () => {
                 role='navigation'
             >
                     <button className={styles.button}>
-                        <Image src={'/images/svg/logo.svg'} width={30} height={30} />
+                        <Image src={'/images/logo.webp'} width={30} height={30} />
                     </button>
             </motion.div>
             <motion.div>
