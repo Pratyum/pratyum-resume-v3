@@ -35,7 +35,7 @@ export const getStaticProps = async (context) => {
       const {
         title: nextCaseTitle,
         url: nextCaseImgUrl,
-        objectPosition: nextCaseObjectPosition,
+        objectPosition: nextCaseObjectPosition = "0% 0%",
       } = nextCaseData;
       return {
         // Passed to the page component as props
