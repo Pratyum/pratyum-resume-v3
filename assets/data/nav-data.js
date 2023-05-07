@@ -23,10 +23,4 @@ export const navData = [
         mobileImgUrl: '/images/mobile-nav-contact.webp',
         linkTo: '/contact',
     },
-    {
-        title: 'join us',
-        imgUrl: '/images/nav-join.webp',
-        mobileImgUrl: '/images/mobile-nav-join.webp',
-        linkTo: '/join',
-    },
 ];

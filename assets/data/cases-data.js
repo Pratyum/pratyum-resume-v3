@@ -4,7 +4,7 @@ export const casesData = [
         title: 'Panalyt',
         desc: 'HR Analytics Platform',
         tag: 'Most Viewed',
-        filterBy: ['Branding', 'E-commerce', 'Most viewed', 'Fashion'],
+        filterBy: ['Analytics','Java', 'React', 'nivo', 'd3', 'chart'],
         caseId: 'panalyt',
         nextCaseId: 'nas-io',
         nextCaseTitle: 'Nas IO',
