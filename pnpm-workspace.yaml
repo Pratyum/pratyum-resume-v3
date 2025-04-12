@@ -1,2 +1,9 @@
+packages:
+  - 'app/**'
+  - 'components/**'
+  - 'context/**'
+  - 'utils/**'
+  - 'assets/**'
+
 onlyBuiltDependencies:
   - sharp
