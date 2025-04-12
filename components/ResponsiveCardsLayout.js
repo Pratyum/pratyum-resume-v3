@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState, useEffect } from 'react';
 import styles from '../styles/ResponsiveCardsLayout.module.css';
 import { aboutData } from '../assets/data/about-data';

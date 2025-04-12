@@ -1,11 +1,12 @@
+'use client'
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useScroll } from 'framer-motion';
 
-import ResponsiveCardsLayout from '../components/ResponsiveCardsLayout';
-import SlidingText from '../components/SlidingText';
-import { aboutData } from '../assets/data/about-data';
-import styles from '../styles/About.module.css';
-import { useAppContext } from '../context/AppContext';
+import ResponsiveCardsLayout from '@/components/ResponsiveCardsLayout';
+import SlidingText from '@/components/SlidingText';
+import { aboutData } from '@/assets/data/about-data';
+import styles from '@/styles/About.module.css';
+import { useAppContext } from '@/context/AppContext';
 import { useInView } from 'react-intersection-observer';
 
 const About = () => {
@@ -364,11 +365,11 @@ const About = () => {
             <section className={styles.section4}>
                 <div className={styles.section4_text_wrapper}>
                     <p>
-                        TODO: Add a blockquote
+                        {"Innovation distinguishes between a leader and a follower. I strive to be innovative in everything I do, pushing the boundaries of what's possible in technology."}
                     </p>
                     <div>
                         <a href='#'>
-                            <SlidingText text={'join the team'} />
+                            <SlidingText text={'PJ'} />
                         </a>
                     </div>
                 </div>

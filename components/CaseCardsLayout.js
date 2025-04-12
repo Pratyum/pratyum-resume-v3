@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useEffect, useState } from 'react';
 // import { useAppContext } from '../context/AppContext';
 import styles from '../styles/CaseCardsLayout.module.css';

@@ -1,83 +1,17 @@
+'use client';
 import React, { useEffect, useState } from "react";
+import Header from "@/components/Header";
+import styles from "@/styles/CaseDetails.module.css";
+import { useAppContext } from "@/context/AppContext";
 
-import Header from "../../components/Header";
-import NotFoundPage from "../404";
-import { casesData } from "../../assets/data/cases-data";
-import styles from "../../styles/CaseDetails.module.css";
-import { useAppContext } from "../../context/AppContext";
-
-// Generates `/cases/1`, `/cases/2`, ...
-export const getStaticPaths = async () => {
-  const paths = casesData.map((item) => {
-    return {
-      params: {
-        caseId: item.caseId,
-      },
-    };
-  });
-
-  return {
-    paths: paths,
-    fallback: false, // can also be true or 'blocking'
-  };
-};
-
-// `getStaticPaths` requires using `getStaticProps`
-export const getStaticProps = async (context) => {
-  try {
-    const caseId = context.params.caseId;
-    const caseData = casesData.filter((item) => item.caseId === caseId)[0];
-    const nextCaseId = caseData.nextCaseId;
-    const nextCaseData = casesData.filter(
-      (item) => item.caseId === nextCaseId
-    )[0];
-    if (nextCaseData) {
-      const {
-        title: nextCaseTitle,
-        url: nextCaseImgUrl,
-        objectPosition: nextCaseObjectPosition = "0% 0%",
-      } = nextCaseData;
-      return {
-        // Passed to the page component as props
-        props: {
-          caseId: caseId,
-          caseData: caseData,
-          nextCaseTitle: nextCaseTitle,
-          nextCaseImgUrl: nextCaseImgUrl,
-          nextCaseObjectPosition: nextCaseObjectPosition,
-        },
-      };
-    }
-
-    return {
-      props: {
-        caseId,
-        caseData,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        notFound: true,
-      },
-    };
-  }
-};
-
-const CaseDetails = ({
+const CaseDetailsClient = ({
   caseId,
   caseData,
   nextCaseTitle,
   nextCaseImgUrl,
   nextCaseObjectPosition,
-  notFound,
 }) => {
-  if (notFound) {
-    return <NotFoundPage />;
-  }
-
   const { view, setScrollDir } = useAppContext();
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -150,7 +84,7 @@ const CaseDetails = ({
                   })}
                 </ul>
               </div>
-              <div>
+              {pageInfo.heading3List && <div>
                 <h3>{pageInfo.heading3}</h3>
                 <ul>
                   {pageInfo.heading3List.map((item, idx) => {
@@ -161,7 +95,7 @@ const CaseDetails = ({
                     );
                   })}
                 </ul>
-              </div>
+              </div>}
             </div>
           </div>
         );
@@ -349,10 +283,14 @@ const CaseDetails = ({
             }}
           />
           <div className={styles.last_page_text_wrapper}>
-            {nextCaseId && <div className={styles.next_up_wrapper}>
-              {`Next up - ${nextCaseTitle}`}
-            </div>}
-            <a href={nextCaseId? `/cases/${nextCaseId}`: '/cases'}>explore</a>
+            {nextCaseId && (
+              <div className={styles.next_up_wrapper}>
+                {`Next up - ${nextCaseTitle}`}
+              </div>
+            )}
+            <a href={nextCaseId ? `/cases/${nextCaseId}` : "/cases"}>
+              explore
+            </a>
           </div>
         </div>
       </main>
@@ -360,4 +298,4 @@ const CaseDetails = ({
   );
 };
 
-export default CaseDetails;
+export default CaseDetailsClient;

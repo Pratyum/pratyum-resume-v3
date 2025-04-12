@@ -1,3 +1,4 @@
+'use client'
 import React, { useRef, useState, useEffect } from 'react';
 import styles from '../../styles/Cases.module.css';
 import { getTotalScrollable } from '../../utils/functions';

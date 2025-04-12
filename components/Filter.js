@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styles from '../styles/Filter.module.css';
 import { filterData } from '../assets/data/filter-data';
