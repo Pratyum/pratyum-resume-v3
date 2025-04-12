@@ -1,14 +1,15 @@
-import CaseCardsLayout from '../components/CaseCardsLayout';
-import Head from 'next/head';
-import Link from 'next/link';
-import React from 'react';
-import { cardsImages } from '../assets/data/home-data';
-import { motion } from 'framer-motion';
-import styles from '../styles/Home.module.css';
-import { useAppContext } from '../context/AppContext';
+'use client';
 
-const Home = () => {
-    const { view } = useAppContext();
+import CaseCardsLayout from '@/components/CaseCardsLayout';
+import React from 'react';
+import { cardsImages } from '@/assets/data/home-data';
+import { motion } from 'framer-motion';
+import styles from '@/styles/Home.module.css';
+import { useAppContext } from '@/context/AppContext';
+import Link from 'next/link';
+
+const HomeContent = () => {
+  const { view } = useAppContext();
     const leftColImages = cardsImages.filter((img) => img.col === 'left');
     const rightColImages = cardsImages.filter((img) => img.col === 'right');
 
@@ -25,11 +26,6 @@ const Home = () => {
             animate={{ backgroundColor: '#fff' }}
             transition={{ delay: 2.2 }}
         >
-            <Head>
-                <title>Pratyum Jagannath</title>
-                <meta name='description' content='Personal Resume for Pratyum Jagannath' />
-            </Head>
-
             <motion.div
                 className={styles.awards_container}
                 initial={{ opacity: 0 }}
@@ -82,7 +78,7 @@ const Home = () => {
                 >
                     <div className={styles.text_container}>
                         <div className={styles.text}>
-                            My name is Pratyum but you can call me PJ. I'm a full stack developer
+                            {"My name is Pratyum but you can call me PJ. I'm a full stack developer"}
                         </div>
                         <div className={styles.link_container}>
                             <div className={styles.dot}></div>
@@ -110,4 +106,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomeContent;

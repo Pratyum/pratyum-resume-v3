@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import styles from '../styles/Navbar.module.css';

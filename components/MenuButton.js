@@ -1,10 +1,12 @@
+'use client';
+
 import React, { useState } from 'react';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../styles/MenuButton.module.css';
 import { useAppContext } from '../context/AppContext';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const MenuButton = () => {
     const router = useRouter();
@@ -75,7 +77,7 @@ const MenuButton = () => {
                 role='navigation'
             >
                     <button className={styles.button}>
-                        <Image src={'/images/logo.webp'} width={30} height={30} />
+                        <Image src={'/images/logo.webp'} width={30} height={30} alt="Menu logo" />
                     </button>
             </motion.div>
             <motion.div>

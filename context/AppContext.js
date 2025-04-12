@@ -1,5 +1,7 @@
+'use client';
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const AppContext = createContext();
 
@@ -44,19 +46,20 @@ export const AppContextProvider = ({ children }) => {
 
     const [selectedFilter, setSelectedFilter] = useState('');
 
-    const router = useRouter();
+    const pathname = usePathname();
     const [isCaseDetailPage, setIsCaseDetailPage] = useState(false);
     const [caseId, setCaseId] = useState('');
     useEffect(() => {
-        const caseId = router.query.caseId;
-        if (caseId) {
+        const pathParts = pathname.split('/');
+        const caseIdFromPath = pathParts[2]; // cases/[caseId] -> index 2
+        if (pathParts[1] === 'cases' && caseIdFromPath) {
             setIsCaseDetailPage(true);
-            setCaseId(caseId);
+            setCaseId(caseIdFromPath);
         } else {
             setIsCaseDetailPage(false);
             setCaseId('');
         }
-    }, [router.query.caseId]);
+    }, [pathname]);
 
     const [scrollDir, setScrollDir] = useState('');
 

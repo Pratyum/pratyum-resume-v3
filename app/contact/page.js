@@ -1,12 +1,14 @@
-import CaseCardsLayout from '../components/CaseCardsLayout';
+'use client'
+
+import CaseCardsLayout from '@/components/CaseCardsLayout';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
-import SlidingText from '../components/SlidingText';
-import { contactImages } from '../assets/data/contact-data';
+import SlidingText from '@/components/SlidingText';
+import { contactImages } from '@/assets/data/contact-data';
 import { motion } from 'framer-motion';
-import styles from '../styles/Contact.module.css';
-import { useAppContext } from '../context/AppContext';
+import styles from '@/styles/Contact.module.css';
+import { useAppContext } from '@/context/AppContext';
 
 const Contact = () => {
     const { view } = useAppContext();

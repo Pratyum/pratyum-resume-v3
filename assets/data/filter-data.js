@@ -1,64 +1,51 @@
 export const filterData = [
     {
-        heading: 'categories',
-        items: [
-            {
-                title: 'Strategy',
-                count: 5,
-            },
-            {
-                title: 'Branding',
-                count: 13,
-            },
-            {
-                title: 'E-commerce',
-                count: 11,
-            },
-            {
-                title: 'Most awarded',
-                count: 4,
-            },
-            {
-                title: 'Most viewed',
-                count: 6,
-            },
-        ],
+      heading: 'Project Focus',
+      items: [
+        { title: 'Strategy', count: 1 },
+        { title: 'Branding', count: 1 },
+        { title: 'E-commerce', count: 2 },
+        { title: 'Most Viewed', count: 3 },
+        { title: 'Furniture', count: 1 },
+        { title: 'Most Awarded', count: 1 },
+        { title: 'Arts & culture', count: 1 },
+        { title: 'HR', count: 1 },
+      ],
     },
     {
-        heading: 'industries',
-        items: [
-            {
-                title: 'Fashion',
-                count: 5,
-            },
-            {
-                title: 'Beauty',
-                count: 1,
-            },
-            {
-                title: 'Sport',
-                count: 5,
-            },
-            {
-                title: 'Furniture',
-                count: 3,
-            },
-            {
-                title: 'Arts & culture',
-                count: 4,
-            },
-            {
-                title: 'Travel',
-                count: 2,
-            },
-            {
-                title: 'Architecture',
-                count: 2,
-            },
-            {
-                title: 'Fintech',
-                count: 1,
-            },
-        ],
+      heading: 'Technologies',
+      items: [
+        { title: 'Analytics', count: 1 },
+        { title: 'Java', count: 1 },
+        { title: 'React', count: 1 },
+        { title: 'nivo', count: 1 },
+        { title: 'd3', count: 1 },
+        { title: 'chart', count: 1 },
+        { title: 'C++', count: 1 },
+        { title: 'Python', count: 2 },
+        { title: 'System Level Testing', count: 1 },
+        { title: 'Android', count: 2 },
+        { title: 'node', count: 2 },
+        { title: 'Firebase', count: 1 },
+        { title: 'Google Maps', count: 1 },
+        { title: 'TPF', count: 1 },
+        { title: 'HTML', count: 3 },
+        { title: 'Mongo', count: 1 },
+        { title: 'Express', count: 1 },
+        { title: 'Hackathon', count: 2 },
+        { title: 'Django', count: 2 },
+        { title: 'Postgres', count: 1 },
+        { title: 'Celery', count: 1 },
+        { title: 'Entrepenurship', count: 1 },
+        { title: 'Solana', count: 1 },
+        { title: 'Typescript', count: 1 },
+        { title: 'Vercel', count: 1 },
+        { title: 'Next.js', count: 1 },
+        { title: 'Github', count: 1 },
+        { title: 'AI', count: 1 },
+        { title: 'Chatbot', count: 1 },
+        { title: 'Facebook', count: 1 },
+      ],
     },
-];
+  ];
+  

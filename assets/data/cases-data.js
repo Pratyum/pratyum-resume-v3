@@ -1,268 +1,285 @@
 export const casesData = [
     {
-        url: '/images/panalyt.webp',
-        title: 'Panalyt',
-        desc: 'HR Analytics Platform',
-        tag: 'Most Viewed',
-        filterBy: ['Analytics','Java', 'React', 'nivo', 'd3', 'chart'],
-        caseId: 'panalyt',
-        nextCaseId: 'nas-io',
-        nextCaseTitle: 'Nas IO',
-        objectPosition: '36.29% 43.94%',
-        pages: [
-            {
-                type: 'info',
-                heading1: 'creative partnership',
-                desc1: `Suitsupply was founded in 1999 as one of the first omnichannel brands in the world. Since 2018, we operate as their global creative lead. Through an ongoing partnership with their internal teams, we ensure all touchpoints are constantly aligned with their brand promise: "Don't just fit in, find your own perfect fit".`,
-                desc2: `Suitsupply provides a radical personal customer approach and brand experience through its 150 stores worldwide and digital services. It's our job to bridge the gap between their on and offline touchpoints.`,
-                redirectUrl: 'https://suitsupply.com/en-ca/',
-                heading2: 'branding',
-                heading2List: [
-                    'Digital rebranding',
-                    'Photography direction',
-                    'Packaging',
-                    'Social media',
-                    'Omnichannel assets',
-                ],
-                heading3: 'e-commerce',
-                heading3List: [
-                    'UX Design',
-                    'UI Design',
-                    'Design system',
-                    'New ways to shop',
-                    'Front-end development',
-                ],
-            },
-            {
-                type: 'fullscreen-image',
-                imageUrl: '/images/suitsupply/page1.webp',
-                alt: 'suitsupply1',
-                objectPosition: '50% 50%',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'fullscreen-image-with-text',
-                textPosition: 'right',
-                imageUrl: '/images/suitsupply/page2.webp',
-                alt: 'suitsupply2',
-                heading: 'digital rebranding',
-                desc: 'We established a global digital rebranding that turned their .com into a digital flagship store.',
-                objectPosition: '0% 20%',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'centered-text',
-                heading: 'visually driven e-commerce',
-                desc: `We set up a digital design language that's rooted in our 'Minimum UI, maximum content' design principle. Turning Suitsupply.com into a visually driven e-commerce platform.`,
-            },
-            {
-                type: 'portrait-video',
-                videoUrl: '/images/suitsupply/suitsupply-look-builder.mp4',
-            },
-            {
-                type: 'fullscreen-image-with-text',
-                textPosition: 'right',
-                imageUrl: '/images/suitsupply/page5.webp',
-                alt: 'suitsupply5',
-                heading: 'look builder',
-                desc: 'Together with Suitsupply, we created a highly intuitive digital tool that allows the users to easily generate numerous looks & styles in no time.',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'fullscreen-video-with-text',
-                textPosition: 'right',
-                videoUrl:
-                    '/images/suitsupply/suitsupply_mobile_shop-the-look.mov',
-                heading: 'integrated shopping experience',
-                desc: 'We ensure that every Suitsupply users have a seamless, integrated shopping experience throughout all touch points.',
-            },
-            {
-                type: 'fullscreen-image',
-                imageUrl: '/images/suitsupply/page7.webp',
-                alt: 'suitsupply7',
-            },
-            {
-                type: 'portrait-video-with-text',
-                backgroundColor: 'rgb(45, 46, 44)',
-                textPosition: 'right',
-                videoUrl: '/images/suitsupply/suitsupply_size-passport.mp4',
-                heading: 'size passport',
-                desc: `A personalized tool for pre-setting and saving the users' garment measurements with just a few clicks.`,
-            },
-            {
-                type: 'portrait-video',
-                videoUrl: '/images/suitsupply/suitsupply_employee-profile.mp4',
-            },
-            {
-                type: 'fullscreen-image-with-text',
-                textPosition: 'right',
-                imageUrl: '/images/suitsupply/page10.webp',
-                alt: 'suitsupply10',
-                heading: 'radical personal booking tool',
-                desc: 'We developed a fast & effective tool allowing visitors to plan a digital or in-store appointment with their personal stylists.',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'fullscreen-image-with-text',
-                textPosition: 'left',
-                imageUrl: '/images/suitsupply/page11.webp',
-                alt: 'suitsupply1',
-                heading: 'the journals',
-                desc: 'We created editorials in the shape of digital magazines that include the latest & greatest in products, style tips, inside looks & all things Suitsupply.',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'centered-text',
-                heading: 'content direction',
-                desc: `We established new content direction for Suitsupply to elevate their products, looks & style, and to bring about an emotional touch onto their content.`,
-            },
-            {
-                gridPlacement: 'full',
-                type: 'fullscreen-video-with-text',
-                textPosition: 'right',
-                videoUrl:
-                    '/images/suitsupply/suitsupply_mobile_journals_art-direction.mov',
-                heading: 'editorial content',
-                desc: 'We enrich Suitsupply editorial content by connecting their makers and suppliers with various photographers.',
-            },
-            {
-                gridPlacement: 'full',
-                type: 'fullscreen-video-with-text',
-                textPosition: 'right',
-                videoUrl:
-                    '/images/suitsupply/suitsupply_mobile_art-direction.mov',
-                heading: 'photography direction',
-                desc: 'We set up a new photography direction for Suitsupply that not only elevates their products, but also adds an emotional layer by going more up close and personal, bringing their fabrics and products to life.',
-            },
-            {
-                type: 'fullscreen-image',
-                imageUrl: '/images/suitsupply/page15.webp',
-                alt: 'suitsupply15',
-            },
-            {
-                type: 'portrait-video-with-text',
-                backgroundColor: 'rgb(45, 46, 44)',
-                textPosition: 'left',
-                videoUrl: '/images/suitsupply/suitsupply-instagram-story.mp4',
-                heading: 'socials',
-                desc: `On Suitsupply's Instagram, we consistently hold on to its signature design language, allowing the brand to successfully integrate their .com & social shopping experience.`,
-            },
-            {
-                gridPlacement: 'full',
-                type: 'centered-text',
-                heading: 'design system',
-                desc: `We are working side by side with Suitsupply’s development team to achieve a comprehensive design system, in order to enhance the design creation and development time.`,
-            },
-            {
-                type: 'fullscreen-image',
-                objectPosition: '70% 44%',
-                imageUrl: '/images/suitsupply/page18.webp',
-                alt: 'suitsupply18',
-            },
-            {
-                type: 'fullscreen-video',
-                videoUrl:
-                    '/images/suitsupply/suitsupply-design-system-creation.mp4',
-            },
-        ],
+      url: '/images/panalyt.webp',
+      title: 'Panalyt',
+      desc: 'HR Analytics Platform connecting complex HR data to actionable insights.',
+      tag: 'Most Viewed',
+      filterBy: ['Analytics', 'Java', 'React', 'nivo', 'd3', 'chart'],
+      caseId: 'panalyt',
+      nextCaseId: 'nas-io',
+      nextCaseTitle: 'Nas IO',
+      objectPosition: '36.29% 43.94%',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Innovative HR Insights',
+          desc1: `At Panalyt, we transformed raw HR data into dynamic dashboards that empower decision-makers with interactive, filterable insights.`,
+          desc2: `Our SaaS platform secured $4.2M in Series A funding by delivering a robust authentication system, scalable data pipelines, and advanced role management—supporting data volumes from 10GB to 100GB.`,
+          redirectUrl: 'https://panalyt.com',
+          heading2: 'Key Achievements',
+          heading2List: [
+            'Secured Series A funding ($4.2M)',
+            'Developed a comprehensive role management system',
+            'Designed a high-performance data pipeline',
+            'Led a diverse team across three countries',
+            'Onboarded 10+ enterprise clients'
+          ],
+          heading3: 'Technical Highlights',
+          heading3List: [
+            'React for dynamic dashboards',
+            'Java backend for robust processing',
+            'nivo and d3 for advanced visualizations',
+            'Real-time API integrations'
+          ]
+        },
+        {
+          type: 'fullscreen-image',
+          imageUrl: '/images/panalyt-insight.webp',
+          alt: 'Dashboard Visualization',
+          objectPosition: '50% 50%'
+        },
+        {
+          gridPlacement: 'full',
+          type: 'centered-text',
+          heading: 'Empowering HR Decisions',
+          desc: `We turn raw numbers into clear, actionable insights that drive organizational change and enhance strategic decision-making.`
+        }
+      ]
     },
     {
-        url: '/images/cases/7.webp',
-        title: 'Crumbs',
-        desc: 'Mobile app to split bills with friends',
-        filterBy: ['Arts & culture'],
-        caseId: 'crumbs',
+      url: '/images/cases/7.webp',
+      title: 'Crumbs',
+      desc: 'Innovative mobile app to split bills seamlessly among friends.',
+      filterBy: ['Arts & culture'],
+      caseId: 'crumbs',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Effortless Bill Splitting',
+          desc1: `Crumbs redefines group payments with a simple, intuitive interface that lets friends split bills in real time—making shared expenses stress-free.`,
+          heading2: 'Highlights',
+          heading2List: [
+            'Streamlined UI for quick payments',
+            'Real-time synchronization',
+            'Secure and reliable transactions',
+            'Built for engaging social experiences'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/nasio.webp',
-        title: 'nas.io',
-        desc: 'Community Building Platform',
-        tag: 'Most Viewed',
-        filterBy: [
-            'Strategy',
-            'Branding',
-            'E-commerce',
-            'Most viewed',
-            'Furniture',
-        ],
-        caseId: 'nas-io',
-    },
-    // {
-    //     url: '/images/uscan.webp',
-    //     title: 'U Scan',
-    //     desc: 'Scan NTU Matric Cards',
-    //     textColorOverride: '#000',
-    //     tag: 'Most Awarded',
-    //     filterBy: ['E-commerce', 'Most awarded', 'Most viewed', 'Furniture'],
-    //     caseId: 'u-scan',
-    // },
-    {
-        url: '/images/cases/4.webp',
-        title: 'MDP',
-        desc: 'Cool robot project for NTU Course',
-        filterBy: [],
-        caseId: 'mdp',
+      url: '/images/nasio.webp',
+      title: 'nas.io',
+      desc: 'Robust community building platform for seamless collaboration and engagement.',
+      tag: 'Most Viewed',
+      filterBy: [
+        'Strategy',
+        'Branding',
+        'E-commerce',
+        'Most viewed',
+        'Furniture'
+      ],
+      caseId: 'nas-io',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Fostering Connected Communities',
+          desc1: `Nas.io is designed to facilitate dynamic community interactions—connecting users, enabling robust content sharing, and promoting brand-centric experiences.`,
+          heading2: 'Platform Features',
+          heading2List: [
+            'Interactive community tools',
+            'Seamless content sharing',
+            'Integrated e-commerce capabilities',
+            'Responsive design for modern brands'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/amd.webp',
-        title: 'AMD',
-        desc: 'Testing Team for the PS5 APU',
-        filterBy: ['C++','Python','System Level Testing'],
-        caseId: 'amd',
+      url: '/images/cases/4.webp',
+      title: 'MDP',
+      desc: 'Innovative robotics project exploring advanced design and automation for NTU courses.',
+      filterBy: [],
+      caseId: 'mdp',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Robotics Innovation',
+          desc1: `MDP demonstrates groundbreaking approaches in robotics—combining theoretical knowledge with hands-on engineering to create interactive, autonomous designs.`,
+          heading2: 'Key Aspects',
+          heading2List: [
+            'Advanced automation techniques',
+            'Experimental robot design',
+            'Practical application in academic settings'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/cases/1.webp',
-        title: 'Party House',
-        desc: 'A way to carpool to a party',
-        textColorOverride: '#999',
-        tag: 'Most Awarded',
-        filterBy: ['Android', 'node', 'Firebase', 'Google Maps'],
-        caseId: 'party-house',
+      url: '/images/amd.webp',
+      title: 'AMD',
+      desc: 'Precision testing team delivering robust validation for the PS5 APU.',
+      filterBy: ['C++', 'Python', 'System Level Testing'],
+      caseId: 'amd',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Precision and Innovation in Testing',
+          desc1: `Our team engineered comprehensive test suites and debugging flows that increased yield by 15%, ensuring peak performance of the PS5 APU.`,
+          heading2: 'Test Framework Highlights',
+          heading2List: [
+            'Advanced test suite development',
+            'Critical debugging techniques',
+            'Optimized system-level testing processes'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/visa.webp',
-        title: 'Visa',
-        desc: 'Worked on Apple Pay',
-        tag: 'Most Viewed',
-        filterBy: ['E-commerce','TPF'],
-        caseId: 'visa',
+      url: '/images/cases/1.webp',
+      title: 'Party House',
+      desc: 'Smart carpooling solution enabling friends to easily join parties together.',
+      textColorOverride: '#999',
+      tag: 'Most Awarded',
+      filterBy: ['Android', 'node', 'Firebase', 'Google Maps'],
+      caseId: 'party-house',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Connected Rides for Memorable Nights',
+          desc1: `Party House streamlines the way friends carpool to social events with real-time tracking and secure connections—making every outing hassle-free.`,
+          heading2: 'Notable Features',
+          heading2List: [
+            'Real-time location tracking',
+            'Seamless Google Maps integration',
+            'User verification for safe rides'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/cases/2.webp',
-        title: 'Fun.D',
-        desc: 'Small website to help people find funds for small projects',
-        filterBy: ['HTML', 'Mongo', 'Express', 'Hackathon'],
-        caseId: 'fun-d',
+      url: '/images/visa.webp',
+      title: 'Visa',
+      desc: 'Developed robust web-based interfaces that power secure real-time financial transactions for Apple Pay.',
+      tag: 'Most Viewed',
+      filterBy: ['E-commerce', 'TPF'],
+      caseId: 'visa',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Enhancing Digital Payments',
+          desc1: `At Visa, our focus was on crafting efficient and secure web interfaces that elevate the digital payments experience—ensuring reliability and responsiveness.`,
+          heading2: 'Technical Proficiencies',
+          heading2List: [
+            'Angular & Spring frameworks',
+            'Real-time data indexing',
+            'Secure transaction management'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/dormbuddy.webp',
-        title: 'Dormbuddy',
-        desc: 'Accesorize your dorm room',
-        objectPosition: '36.29% 43.94%',
-        filterBy: ['HTML', 'Django', 'Postgres', 'Celery', 'Entrepenurship'],
-        caseId: 'dormbuddy',
+      url: '/images/cases/2.webp',
+      title: 'Fun.D',
+      desc: 'Empowering innovators through a streamlined platform that connects small projects with essential funding.',
+      filterBy: ['HTML', 'Mongo', 'Express', 'Hackathon'],
+      caseId: 'fun-d',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Connecting Ideas with Funding',
+          desc1: `Fun.D bridges the gap between creative project ideas and the financial support they need to come to life—empowering a new generation of innovators.`,
+          heading2: 'Core Benefits',
+          heading2List: [
+            'User-friendly platform design',
+            'Robust backend integration',
+            'Dynamic funding strategies'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/cases/8.webp',
-        title: 'NFT Mint',
-        desc: 'Website to mint NFTs',
-        filterBy: ['Solana', 'Typescript', 'Vercel', 'Next.js'],
-        caseId: 'nft-mint',
+      url: '/images/dormbuddy.webp',
+      title: 'Dormbuddy',
+      desc: 'Innovative platform enhancing dorm living through curated accessories and essential rentals.',
+      objectPosition: '36.29% 43.94%',
+      filterBy: ['HTML', 'Django', 'Postgres', 'Celery', 'Entrepenurship'],
+      caseId: 'dormbuddy',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Enhancing Student Living',
+          desc1: `Dormbuddy empowers students by providing an intuitive platform to rent or purchase dorm essentials—streamlining payments and delivering a superior user experience.`,
+          heading2: 'Platform Features',
+          heading2List: [
+            'Secure payment processing',
+            'Optimized SEO and live analytics',
+            'User-centric, responsive design'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/impressai.webp',
-        title: 'impress.ai',
-        desc: 'AI-powered chatbot for HR Recruiting',
-        objectPosition: '36.29% 43.94%',
-        textColorOverride: '#000',
-        filterBy: ['Github', 'HR' , 'AI', 'Chatbot', 'Python', 'HTML', 'Django'],
-        caseId: 'mdp',
+      url: '/images/cases/8.webp',
+      title: 'NFT Mint',
+      desc: 'Dynamic NFT minting platform leveraging blockchain technology for seamless digital asset creation.',
+      filterBy: ['Solana', 'Typescript', 'Vercel', 'Next.js'],
+      caseId: 'nft-mint',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Revolutionizing Digital Ownership',
+          desc1: `NFT Mint transforms how digital assets are created and owned—offering a secure, efficient minting process powered by the Solana blockchain.`,
+          heading2: 'Technical Highlights',
+          heading2List: [
+            'Solana blockchain integration',
+            'Next.js for enhanced user experience',
+            'Optimized for speed and scalability'
+          ]
+        }
+      ]
     },
     {
-        url: '/images/cases/10.webp',
-        title: 'Cast.us',
-        desc: 'Live videos on Facebook to switch live feeds between friends',
-        filterBy: ['Android', 'Node', 'Hackathon', 'Facebook'],
-        caseId: 'cast-us',
+      url: '/images/impressai.webp',
+      title: 'impress.ai',
+      desc: 'Transforming HR recruitment with AI-powered chatbots that streamline candidate engagement.',
+      objectPosition: '36.29% 43.94%',
+      textColorOverride: '#000',
+      filterBy: ['Github', 'HR', 'AI', 'Chatbot', 'Python', 'HTML', 'Django'],
+      caseId: 'mdp',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Revolutionizing HR Recruitment',
+          desc1: `Impress.ai leverages artificial intelligence to streamline candidate screening and engagement—offering a conversational platform that enhances recruitment efficiency.`,
+          heading2: 'Solution Highlights',
+          heading2List: [
+            'Intelligent candidate matching',
+            'Efficient and automated workflows',
+            'Scalable, secure AI integration'
+          ]
+        }
+      ]
     },
-];
+    {
+      url: '/images/cases/10.webp',
+      title: 'Cast.us',
+      desc: 'Live streaming platform that dynamically switches live feeds for an engaging social viewing experience.',
+      filterBy: ['Android', 'Node', 'Hackathon', 'Facebook'],
+      caseId: 'cast-us',
+      pages: [
+        {
+          type: 'info',
+          heading1: 'Seamless Live Streaming',
+          desc1: `Cast.us integrates multiple live video feeds, enabling users to switch effortlessly between friends’ streams—a truly interactive social media experience.`,
+          heading2: 'Core Features',
+          heading2List: [
+            'Real-time feed switching',
+            'Optimized for mobile and web',
+            'User-friendly social integration'
+          ]
+        }
+      ]
+    }
+  ];
+  
