@@ -10,12 +10,6 @@ export const ContactContent = () => {
     const leftColImages = contactImages.filter((img) => img.col === 'left');
     const rightColImages = contactImages.filter((img) => img.col === 'right');
 
-    const getHeadingHeight = () => {
-        if (view === 'mobile') return 60;
-        if (view === 'desktop') return 70;
-        if (view === 'largeDesktop') return 120;
-    };
-
     return (
         <div className={styles.container}>
 
@@ -32,13 +26,13 @@ export const ContactContent = () => {
                     <div>
                         <h2 className={styles.heading2}>Write to me</h2>
                         <div className={styles.sliding_text}>
-                            <SlidingText text={'hello@pratyumjagan.com'} />
+                            <SlidingText as="a" href="mailto:hello@pratyumjagan.in" text={'hello@pratyumjagan.com'} />
                         </div>
                     </div>
                     <div>
                         <h2 className={styles.heading2}>Call Me</h2>
                         <div className={styles.sliding_text}>
-                            <SlidingText text={'+91 94444 89090'} />
+                            <SlidingText as="a" href="tel:+919444489090" text={'+91 94444 89090'} />
                         </div>
                     </div>
                     <div>
@@ -52,16 +46,16 @@ export const ContactContent = () => {
                         </h2>
                         <ul className={styles.ul}>
                             <li className={styles.sliding_text}>
-                                <SlidingText text={'Instagram'} />
+                                <SlidingText as="a" href="https://www.instagram.com/pratyumj/" text={'Instagram'} />
                             </li>
                             <li className={styles.sliding_text}>
-                                <SlidingText text={'Facebook'} />
+                                <SlidingText as="a" href="https://www.facebook.com/pratyum.jagan" text={'Facebook'} />
                             </li>
                             <li className={styles.sliding_text}>
-                                <SlidingText text={'Twitter'} />
+                                <SlidingText as="a" href="https://x.com/theDrMurder" text={'Twitter'} />
                             </li>
                             <li className={styles.sliding_text}>
-                                <SlidingText text={'LinkedIn'} />
+                                <SlidingText as="a" href="https://www.linkedin.com/in/pratyumjagannath/" text={'LinkedIn'} />
                             </li>
                         </ul>
                     </div>

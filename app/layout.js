@@ -23,8 +23,8 @@ export const metadata = {
     images: [
       {
         url: '/images/logo.webp', // Create this image based on your branding
-        width: 1200,
-        height: 630,
+        width: 234,
+        height: 234,
         alt: 'Pratyum Jagannath',
       },
     ],
@@ -51,9 +51,7 @@ export const metadata = {
     google: 'your-google-verification-code', // Add your Google verification code
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon.ico'
   },
 };
 

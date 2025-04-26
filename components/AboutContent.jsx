@@ -49,6 +49,7 @@ export const AboutContent = () => {
                                         <img
                                             className={styles.sliding_img}
                                             src={img.imgUrl}
+                                            alt={img.altText}
                                         />
                                     </div>
                                 ))}
@@ -168,7 +169,7 @@ export const AboutContent = () => {
                                     >
                                         <img
                                             src='/images/nft_mint.webp'
-                                            alt='mammut'
+                                            alt='NFT mint project'
                                         />
                                         <div
                                             className={
@@ -223,7 +224,7 @@ export const AboutContent = () => {
                                     >
                                         <img
                                             src='/images/uscan.webp'
-                                            alt='moooi'
+                                            alt='U Scan @ NTU project'
                                         />
                                         <div
                                             className={
@@ -278,7 +279,7 @@ export const AboutContent = () => {
                                     >
                                         <img
                                             src='/images/mdp_poster.webp'
-                                            alt='suitsupply'
+                                            alt='Multi Disclinary Path finder project poster'
                                         />
                                         <div
                                             className={
@@ -333,7 +334,7 @@ export const AboutContent = () => {
                 <header className={styles.section5_header}>
                     <h2>My Experience</h2>
                 </header>
-                <div className={styles.section5_list_wrapper}>
+                <ul className={styles.section5_list_wrapper}>
                     {sectionFiveData.map((item, idx) => (
                         <li key={idx}>
                             <h2>{item.heading}</h2>
@@ -344,7 +345,7 @@ export const AboutContent = () => {
                             </ul>
                         </li>
                     ))}
-                </div>
+                </ul>
             </section>
 
             {/* section 6 - stats & facts */}
@@ -352,7 +353,7 @@ export const AboutContent = () => {
                 <header className={styles.section6_header}>
                     <h2>stats & facts</h2>
                 </header>
-                <div className={styles.section6_list_wrapper}>
+                <ul className={styles.section6_list_wrapper}>
                     {sectionSixData.map((item, idx) => (
                         <li key={idx}>
                             <p>{item.number}</p>
@@ -366,7 +367,7 @@ export const AboutContent = () => {
                             </div>
                         </li>
                     ))}
-                </div>
+                </ul>
             </section>
 
             {/* section 7 - last page */}

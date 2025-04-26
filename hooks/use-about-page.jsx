@@ -24,7 +24,7 @@ export const useAboutPage = () => {
     // section 1 scroll animation
     useEffect(() => {
         const onScroll = () => {
-            const sec1OffsetTop = section1Ref.current.offsetTop; // distance of ref div from top
+            const sec1OffsetTop = section1Ref.current.offsetTop ?? 0; // distance of ref div from top
             const scrolledAmount = window.pageYOffset; // scrolled Y distance
             if (
                 scrolledAmount >= sec1OffsetTop && // ref div is at top of screen
@@ -36,7 +36,7 @@ export const useAboutPage = () => {
             }
         };
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, {passive: true});
 
         // clean up
         return () => window.removeEventListener('scroll', onScroll);
@@ -45,7 +45,7 @@ export const useAboutPage = () => {
     // section 3 scroll animation
     useEffect(() => {
         const onScroll = () => {
-            const sec3OffsetTop = section3Ref.current.offsetTop; // distance of ref div from top
+            const sec3OffsetTop = section3Ref.current.offsetTop ?? 0; // distance of ref div from top
             const scrolledAmount = window.pageYOffset; // scrolled Y distance
             if (
                 scrolledAmount >= sec3OffsetTop && // ref div is at top of screen
@@ -55,7 +55,7 @@ export const useAboutPage = () => {
             }
         };
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll , {passive : true});
 
         // clean up
         return () => window.removeEventListener('scroll', onScroll);

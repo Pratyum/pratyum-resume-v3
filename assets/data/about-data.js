@@ -3,12 +3,15 @@ export const aboutData = {
     sectionOneImages: [
         {
             imgUrl: '/images/contact/1.webp',
+            altText: 'Pratyum Jagannath in Bali',
         },
         {
             imgUrl: '/images/contact/3.webp',
+            altText: 'Pratyum @ Avengers event in SG'
         },
         {
             imgUrl: '/images/contact/4.webp',
+            altText: 'Pratyum @ SG',
         },
     ],
     sectionFourData: {

@@ -9,6 +9,7 @@ import styles from '@/styles/Cases.module.css';
 import { motion } from 'framer-motion';
 
 export const CaseContent = () => {
+    const DESKTOP_RIGHT_RIGHT_SPEED = 2.81;
     const { view, isFilterOpen, setIsFilterOpen, selectedFilter } =
         useAppContext();
 
@@ -72,8 +73,8 @@ export const CaseContent = () => {
             }
         }
 
-        setImageLists({
-            ...imageLists,
+        setImageLists(prev => ({
+            ...prev,
             mobile: {
                 left: mobileLeft,
                 right: mobileRight,
@@ -84,8 +85,11 @@ export const CaseContent = () => {
                 right: right,
                 rightRight: rightRight,
             },
-        });
+        }));
     }, [selectedFilter]);
+
+    const getTotalScrollable = () =>
+        document.documentElement.scrollHeight - window.innerHeight;
 
     // for offset scrolling left and right columns
     useEffect(() => {
@@ -197,9 +201,9 @@ export const CaseContent = () => {
                                 isFilterOpen && styles.move_right_col,
                             ].join(' ')}
                             style={{
-                                translate: `0 ${
+                                transform: `translateY(${
                                     percentToScroll * colHeightDiff
-                                }px`,
+                                }px)`,
                             }}
                         >
                             {imageLists.mobile.right.map((caseData, idx) => {
@@ -365,7 +369,7 @@ export const CaseContent = () => {
                             ].join(' ')}
                             style={{
                                 translate: `0 ${
-                                    percentToScroll * colHeightDiff * 2.81 // hacky!
+                                    percentToScroll * colHeightDiff * DESKTOP_RIGHT_RIGHT_SPEED
                                 }px`,
                             }}
                         >
