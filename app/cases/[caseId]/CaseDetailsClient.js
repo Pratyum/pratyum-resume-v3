@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import styles from "@/styles/CaseDetails.module.css";
 import { useAppContext } from "@/context/AppContext";
+import StructuredData from "@/components/StructuredData";
 
 const CaseDetailsClient = ({
   caseId,
@@ -231,8 +232,21 @@ const CaseDetailsClient = ({
       return renderedPages;
     }
   };
+  const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": caseData.title,
+      "description": caseData.desc,
+      "applicationCategory": "Web Application",
+      "author": {
+        "@type": "Person",
+        "name": "Pratyum Jagannath"
+      },
+      "keywords": caseData.keywords,
+  }
 
   return (
+    <>
     <div className={styles.container}>
       <main className={styles.main} id="main">
         {/* main page */}
@@ -295,6 +309,8 @@ const CaseDetailsClient = ({
         </div>
       </main>
     </div>
+    <StructuredData data={structuredData} />
+    </>
   );
 };
 

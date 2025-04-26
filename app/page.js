@@ -1,5 +1,7 @@
 
+import { personData } from '@/assets/data/personal-data';
 import HomeContent from '@/components/HomeContent';
+import StructuredData from '@/components/StructuredData';
 
 export const metadata = {
   title: 'Pratyum Jagannath',
@@ -7,7 +9,10 @@ export const metadata = {
 };
 
 const Home = () => {
-  return <HomeContent />;
+  return <>
+  <HomeContent />
+  <StructuredData data={personData} />
+  </>;
 };
 
 export default Home;

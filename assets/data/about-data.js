@@ -1,13 +1,17 @@
 export const aboutData = {
+    introText: 'Driven by passion, I think of futuristic ideas and strive to make it a possibility today.',
     sectionOneImages: [
         {
             imgUrl: '/images/contact/1.webp',
+            altText: 'Pratyum Jagannath in Bali',
         },
         {
             imgUrl: '/images/contact/3.webp',
+            altText: 'Pratyum @ Avengers event in SG'
         },
         {
             imgUrl: '/images/contact/4.webp',
+            altText: 'Pratyum @ SG',
         },
     ],
     sectionFourData: {
