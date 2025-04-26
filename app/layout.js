@@ -1,8 +1,8 @@
 import Layout from '@/components/Layout';
-import '@/styles/globals.css';
 import { AppContextProvider } from '@/context/AppContext';
-import {Analytics} from '@vercel/analytics';
-
+import '@/styles/globals.css';
+import { Analytics } from '@vercel/analytics/next';
+ 
 export const metadata = {
   metadataBase: new URL('https://pratyumjagan.in'),
   title: {
