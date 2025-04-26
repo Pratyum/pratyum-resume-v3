@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import '@/styles/globals.css';
 import { AppContextProvider } from '@/context/AppContext';
+import {Analytics} from '@vercel/analytics';
 
 export const metadata = {
   metadataBase: new URL('https://pratyumjagan.in'),
@@ -57,6 +58,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const isDev = process.env.NODE_ENV === 'development';
   return (
     <html lang="en">
       <body>
@@ -65,6 +67,7 @@ export default function RootLayout({ children }) {
             {children}
           </Layout>
         </AppContextProvider>
+        <Analytics debug={isDev} mode={isDev ? 'development': 'production'} />
       </body>
     </html>
   );
