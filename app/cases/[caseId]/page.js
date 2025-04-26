@@ -41,7 +41,7 @@ export default async function CaseDetails({ params }) {
       }),
     };
 
-    return <CaseDetailsClient {...props} />;
+    return <CaseDetailsClient {...props} />
   } catch (error) {
     return notFound();
   }

@@ -1,4 +1,5 @@
 export const aboutData = {
+    introText: 'Driven by passion, I think of futuristic ideas and strive to make it a possibility today.',
     sectionOneImages: [
         {
             imgUrl: '/images/contact/1.webp',
