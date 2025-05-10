@@ -1,0 +1,193 @@
+---
+title: "Fun.D"
+desc: "Empowering innovators through a streamlined platform that connects small projects with essential funding."
+url: "/images/cases/2.webp"
+date: "2015-09-01"
+lastModified: "2024-05-01"
+filterBy: ["HTML", "Mongo", "Express", "Hackathon"]
+nextCaseId: "dormbuddy"
+nextCaseTitle: "Dormbuddy"
+pages:
+  - type: "info"
+    heading1: "Connecting Ideas with Funding"
+    desc1: "Fun.D bridges the gap between creative project ideas and the financial support they need to come to life—empowering a new generation of innovators."
+    desc2: "Developed during the Accenture Hackathon 2015, this platform earned third place by addressing the critical need for microfunding of small-scale creative and entrepreneurial projects."
+    heading2: "Key Features"
+    heading2List:
+      - "User-friendly project submission system"
+      - "Robust backend integration for project management"
+      - "Secure payment processing system"
+      - "Dynamic funding strategies"
+    heading3: "Technical Highlights"
+    heading3List:
+      - "MongoDB database for flexible project storage"
+      - "Express.js backend for API services"
+      - "Custom HTML/CSS frontend for intuitive experience"
+      - "RESTful API architecture"
+  - type: "fullscreen-image"
+    imageUrl: "/images/fund-projects.webp"
+    alt: "Fun.D Projects Dashboard"
+    objectPosition: "50% 50%"
+  - type: "centered-text"
+    gridPlacement: "full"
+    heading: "Empowering Grassroots Innovation"
+    desc: "By focusing on smaller funding needs often overlooked by traditional platforms, Fun.D enables a wider range of creative and entrepreneurial ideas to find the support they need to flourish."
+---
+
+# Fun.D: Democratizing Project Funding
+
+<TechStack technologies={["HTML", "CSS", "JavaScript", "MongoDB", "Express.js", "Node.js", "RESTful API"]} />
+
+## The Challenge
+
+Small-scale creative and entrepreneurial projects often struggle to find appropriate funding sources because:
+
+- Traditional crowdfunding platforms favor larger projects with significant marketing
+- Small funding needs (under $1,000) are often overlooked
+- Complex application processes discourage grassroots innovators
+- Many platforms lack appropriate categories for niche projects
+- High platform fees eat into already minimal funding goals
+
+## Our Solution
+
+For the Accenture Hackathon in 2015, our team developed Fun.D, a streamlined platform specifically designed to connect small projects with essential funding. As a key developer on the project, I contributed to:
+
+<ImageGrid images={[
+  { src: "/images/fund-home.webp", alt: "Fun.D Homepage" },
+  { src: "/images/fund-project-detail.webp", alt: "Project Detail View" }
+]} />
+
+### User-Friendly Project Submission
+
+I designed and implemented an intuitive project submission system that simplified the process for creators:
+
+- Streamlined multi-step form with progress tracking
+- Simple category selection with relevant options for small projects
+- Flexible funding goal setting with suggested ranges
+- Easy media upload for project visuals
+- Built-in guidance for creating compelling project descriptions
+
+<CodeDemo title="Project Submission Flow">
+```javascript
+// Express route for project creation
+app.post('/api/projects', async (req, res) => {
+  try {
+    // Validate project data
+    const projectSchema = Joi.object({
+      title: Joi.string().min(5).max(100).required(),
+      category: Joi.string().valid(...VALID_CATEGORIES).required(),
+      fundingGoal: Joi.number().min(50).max(5000).required(),
+      duration: Joi.number().min(7).max(60).required(),
+      description: Joi.string().min(100).required(),
+      creatorId: Joi.string().required(),
+      // Other validation rules
+    });
+    
+    const { error, value } = projectSchema.validate(req.body);
+    
+    if (error) {
+      return res.status(400).json({ 
+        error: error.details[0].message 
+      });
+    }
+    
+    // Process media files
+    const mediaFiles = req.files.map(processMediaFile);
+    
+    // Create project in database
+    const project = new Project({
+      ...value,
+      mediaUrls: mediaFiles.map(file => file.url),
+      status: 'pending',
+      createdAt: new Date(),
+      currentFunding: 0,
+      backers: []
+    });
+    
+    await project.save();
+    
+    // Return success response
+    res.status(201).json({
+      success: true,
+      projectId: project._id,
+      message: 'Project created successfully and pending review'
+    });
+    
+  } catch (err) {
+    console.error('Project creation error:', err);
+    res.status(500).json({ error: 'Failed to create project' });
+  }
+});
+```
+</CodeDemo>
+
+### Dynamic Funding Strategies
+Unlike traditional all-or-nothing crowdfunding, we implemented flexible funding options:
+
+- "Flexible Funding" where creators receive all funds regardless of goal achievement
+- "Milestone Funding" releasing funds as project phases are completed
+- "Matching Funds" where certain sponsors would match community contributions
+- Analytics to help creators adjust goals based on funding patterns
+- Deadline extensions for promising projects nearing their goals
+
+### Secure Payment Processing
+I developed a secure payment system that prioritized transparency and security:
+
+- Multiple payment method support
+- Clear fee structure with lower rates than industry standards
+- Secure payment processing with encryption
+- Automated fund disbursement based on chosen funding strategy
+- Refund mechanisms for unsuccessful projects when applicable
+
+<Callout type="info" title="Technical Innovation">
+A particular technical innovation was our implementation of a lightweight escrow system that held funds in "milestone mode" until creators provided evidence of progress, giving backers confidence while supporting creators through the project lifecycle.
+</Callout>
+
+### Community Engagement Features
+To foster a supportive ecosystem around projects, we built community features:
+
+- Project following and updates
+- Creator-backer direct messaging
+- Project update notifications
+- Community commenting and feedback
+- Social sharing integration
+
+Hackathon Success
+Fun.D is recognized for:
+
+- Addressing a genuine market gap in the crowdfunding space
+- Technical implementation excellence
+- User-centered design approach
+- Potential for social impact through grassroots innovation
+- Scalable business model with clear value proposition
+
+<Timeline events={[
+{ date: "September 2015", title: "Hackathon Kickoff", description: "Team formation and concept development" },
+{ date: "September 2015", title: "36-Hour Development", description: "Intensive coding and feature implementation" },
+{ date: "September 2015", title: "Presentation to Judges", description: "Demonstration of working prototype" },
+{ date: "September 2015", title: "Third Place Award", description: "Fun.D recognized with third prize" },
+{ date: "October 2015", title: "Post-Hackathon Refinement", description: "Additional development based on feedback" }
+]} />
+
+
+### Technical Architecture
+Fun.D was built with a straightforward but effective technical stack:
+
+- **Frontend**: Custom HTML, CSS, and JavaScript for a responsive interface
+- **Backend**: Express.js for API services and application logic
+- **Database**: MongoDB for flexible project and user data storage
+- **Authentication**: JWT-based authentication system
+- **Media Storage**: Cloud storage for project images and videos
+- **Payment Processing**: Integration with secure payment providers
+- **Hosting**: Node.js server with horizontal scaling capabilities
+
+### Key Learning Outcomes
+Developing Fun.D during the Accenture Hackathon provided valuable insights and skills:
+
+1. Rapid Prototyping: Building a functional platform under extreme time constraints
+2. User-Centered Design: Focusing on the needs of both project creators and backers
+3. Financial Systems: Implementing secure payment processing and fund management
+4. NoSQL Database Design: Structuring flexible data models in MongoDB
+5. Team Collaboration: Effective coordination in a high-pressure environment
+
+The Fun.D project showcased my ability to develop practical solutions to real-world problems, with a focus on creating intuitive user experiences supported by robust backend systems. The skills developed during this hackathon—particularly in financial systems and database design—have formed a foundation for my later work in full-stack development.

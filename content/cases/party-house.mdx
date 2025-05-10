@@ -1,0 +1,198 @@
+---
+title: "Party House"
+desc: "Smart carpooling solution enabling friends to easily join parties together."
+url: "/images/cases/1.webp"
+date: "2016-09-01"
+lastModified: "2024-05-01"
+tag: "Most Awarded"
+filterBy: ["Android", "node", "Firebase", "Google Maps"]
+textColorOverride: "#000"
+nextCaseId: "fun-d"
+nextCaseTitle: "Fun.D"
+pages:
+  - type: "info"
+    heading1: "Connected Rides for Memorable Nights"
+    desc1: "Party House streamlines the way friends carpool to social events with real-time tracking and secure connections—making every outing hassle-free."
+    desc2: "Winner of the CEC-Accenture Hackathon 2016, this native Android application revolutionizes group transportation for social events by implementing real-time location tracking and secure verification."
+    heading2: "Key Features"
+    heading2List:
+      - "Real-time location tracking via Google Maps"
+      - "Secure user verification system"
+      - "Group management for coordinated arrivals"
+      - "In-app communication for pick-up coordination"
+    heading3: "Technical Highlights"
+    heading3List:
+      - "Android native development"
+      - "Node.js backend services"
+      - "Firebase for real-time data"
+      - "Google Maps API integration"
+  - type: "fullscreen-image"
+    imageUrl: "/images/party-house-map.webp"
+    alt: "Party House Map Interface"
+    objectPosition: "50% 50%"
+  - type: "centered-text"
+    gridPlacement: "full"
+    heading: "Award-Winning Innovation"
+    desc: "Party House won the CEC-Accenture Hackathon in 2016 for its innovative approach to solving social transportation challenges."
+---
+
+# Party House: Revolutionizing Social Transportation
+
+<TechStack technologies={["Android", "Node.js", "Firebase", "Google Maps API", "Facebook API", "Parse Server", "PayPal API"]} />
+
+## The Challenge
+
+Coordinating transportation to social events is often chaotic and inefficient. Friends struggle with:
+
+- Finding efficient ways to travel together to events
+- Coordinating pick-up times and locations
+- Tracking each other's locations in real-time
+- Splitting transportation costs fairly
+- Ensuring everyone arrives safely
+
+## Our Solution
+
+For the CEC-Accenture Hackathon in 2016, our team developed Party House, a native Android application that streamlines carpooling for social events. As a key developer on the project, I contributed to:
+
+<ImageGrid images={[
+  { src: "/images/party-house-app.webp", alt: "Party House App Interface" },
+  { src: "/images/party-house-groups.webp", alt: "Group Management Screen" }
+]} />
+
+### Real-time Location Tracking
+
+I implemented a sophisticated location tracking system using Google Maps API and Firebase:
+
+<CodeDemo title="Location Tracking Implementation">
+```java
+public class LocationTrackingService extends Service {
+    private static final long UPDATE_INTERVAL = 10000;  // 10 seconds
+    private static final long FASTEST_INTERVAL = 5000;  // 5 seconds
+    
+    private FusedLocationProviderClient fusedLocationClient;
+    private LocationCallback locationCallback;
+    private DatabaseReference databaseRef;
+    
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        
+        // Initialize Firebase
+        databaseRef = FirebaseDatabase.getInstance().getReference("user_locations");
+        
+        // Initialize location services
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        
+        // Define location callback
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) return;
+                
+                // Get the latest location
+                Location location = locationResult.getLastLocation();
+                
+                // Update Firebase with new location
+                updateLocationInFirebase(location);
+            }
+        };
+    }
+    
+    private void updateLocationInFirebase(Location location) {
+        // Get current user
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) return;
+        
+        // Update location in real-time database
+        UserLocation userLocation = new UserLocation(
+            location.getLatitude(),
+            location.getLongitude(),
+            System.currentTimeMillis()
+        );
+        
+        databaseRef.child(currentUser.getUid()).setValue(userLocation);
+    }
+    
+    // Additional service methods omitted for brevity
+}
+```
+</CodeDemo>
+
+This system enabled:
+- Real-time visualization of all friends' locations on a map
+- Accurate ETA calculations for pick-ups
+- Optimized route planning for drivers
+- Location history for safety and accountability
+
+### Secure User Verification
+To ensure user safety, we implemented a multi-faceted verification system:
+
+- Facebook API integration for social validation
+- Phone number verification via SMS
+- Rating system for drivers and passengers
+- Report functionality for safety concerns
+
+### Group Management System
+I developed a comprehensive group management feature that allowed users to:
+
+- Create event-specific carpooling groups
+- Invite friends through Facebook or contacts
+- Assign roles (drivers and passengers)
+- Coordinate pick-up order and timing
+- Share event details and important information
+
+<Callout type="info" title="Technical Achievement">
+A particular innovation was our dynamic routing algorithm that automatically optimized pick-up sequences based on location proximity, minimizing travel time and fuel consumption while ensuring everyone arrived at the party together.
+</Callout>
+
+### In-app Payment System
+To simplify cost sharing, we integrated the PayPal API for seamless in-app payments:
+
+- Easy splitting of transportation costs
+- Transparent fee calculation based on distance
+- Secure payment processing
+- Payment history for record-keeping
+- Support for multiple currencies
+
+### Hackathon Success
+Party House won the CEC-Accenture Hackathon in 2016, standing out among numerous competing projects for its:
+
+- Innovative solution to a common social problem
+- Technical implementation excellence
+- User-friendly interface and experience
+- Potential for real-world impact
+- Integration of multiple technologies
+
+<Timeline events={[
+{ date: "September 2016", title: "Hackathon Kickoff", description: "Team formation and initial concept development" },
+{ date: "September 2016", title: "24-Hour Development", description: "Intensive coding and feature implementation" },
+{ date: "September 2016", title: "Final Presentation", description: "Demonstration of working prototype to judges" },
+{ date: "September 2016", title: "Winner Announcement", description: "Party House awarded first place in the hackathon" },
+{ date: "October 2016", title: "Post-Hackathon Refinement", description: "Further development based on judge feedback" }
+]} />
+
+
+### Technical Architecture
+Party House was built with a robust, scalable architecture:
+
+- **Frontend**: Native Android application with Material Design
+- **Backend**: Node.js for API services
+- **Real-time Database**: Firebase for live location updates
+- **Authentication**: Facebook OAuth and custom verification
+- **Geolocation**: Google Maps API for mapping and routing
+- **Payments**: PayPal API integration for in-app transactions
+- **Push Notifications**: Firebase Cloud Messaging for alerts
+
+### Key Learning Outcomes
+The Party House project provided valuable learning experiences:
+
+- Real-time System Design: Building applications that require millisecond-level synchronization
+- Location-Based Services: Implementing efficient and battery-friendly geolocation features
+- Social Graph Integration: Leveraging existing social connections through Facebook's API
+- Payment Processing: Securely handling financial transactions in mobile applications
+- Hackathon Strategy: Effectively prioritizing features and managing time constraints
+
+<Callout type="success" title="Competition Victory">
+Our team's victory at the CEC-Accenture Hackathon validated not only our technical implementation but also our understanding of user needs and our ability to execute a complete solution under extreme time pressure.
+</Callout>
+Party House demonstrated my ability to rapidly develop functional, user-focused applications that solve real-world problems. The skills and experiences gained from this project—particularly in real-time systems and location-based services—have proven valuable throughout my career in software development.

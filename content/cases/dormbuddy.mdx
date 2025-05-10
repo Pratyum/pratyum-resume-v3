@@ -1,0 +1,182 @@
+---
+title: "Dormbuddy"
+desc: "Innovative platform enhancing dorm living through curated accessories and essential rentals."
+url: "/images/dormbuddy.webp"
+date: "2019-08-01"
+lastModified: "2024-05-01"
+filterBy: ["HTML", "Django", "Postgres", "Celery", "Entrepreneurship"]
+objectPosition: "36.29% 43.94%"
+nextCaseId: "party-house"
+nextCaseTitle: "Party House"
+pages:
+  - type: "info"
+    heading1: "Enhancing Student Living"
+    desc1: "Dormbuddy empowers students by providing an intuitive platform to rent or purchase dorm essentials—streamlining payments and delivering a superior user experience."
+    desc2: "As Co-Founder and CTO, I built and maintained the entire e-commerce store from scratch, optimized SEO, and managed over $10,000 SGD in payments through our custom platform."
+    redirectUrl: "https://sites.google.com/a/ntuentrepreneur.org/b42-43g7/pratyum"
+    heading2: "Key Achievements"
+    heading2List:
+      - "Built complete e-commerce platform from scratch"
+      - "Processed $10,000+ SGD in payments"
+      - "Optimized SEO for customer acquisition"
+      - "Implemented real-time analytics tracking"
+    heading3: "Technical Highlights"
+    heading3List:
+      - "Django framework for backend"
+      - "PostgreSQL database for reliability"
+      - "NGINX for web server performance"
+      - "Custom HTML/CSS/JS frontend"
+  - type: "fullscreen-image"
+    imageUrl: "/images/dormbuddy-products.webp"
+    alt: "Dormbuddy Product Selection"
+    objectPosition: "50% 50%"
+  - type: "centered-text"
+    gridPlacement: "full"
+    heading: "Empowering Exchange Students"
+    desc: "We helped exchange students start their overseas journey without the burden of purchasing and later discarding essential dorm items, promoting sustainability and convenience."
+---
+
+# Dormbuddy: Revolutionizing Student Living Experience
+
+<TechStack technologies={["Django", "PostgreSQL", "HTML/CSS/JS", "NGINX", "SEO", "Analytics"]} />
+
+## The Challenge
+
+Exchange students arriving at universities face a common problem: they need essential dorm items for their short stay but don't want to purchase everything new only to discard it months later. This creates:
+
+- Financial burden on students with limited budgets
+- Environmental waste from single-use purchases
+- Logistical challenges of acquiring essentials in an unfamiliar country
+- Storage issues when leaving at semester's end
+
+## Our Solution
+
+As Co-Founder and CTO of Dormbuddy LLP in Singapore, I developed a comprehensive e-commerce platform that addressed these challenges by offering rental services for dorm essentials.
+
+<ImageGrid images={[
+  { src: "/images/dormbuddy-home.webp", alt: "Dormbuddy Homepage" },
+  { src: "/images/dormbuddy-checkout.webp", alt: "Streamlined Checkout Process" }
+]} />
+
+### Complete E-commerce Platform
+
+I built the entire e-commerce store from scratch, focusing on creating a seamless experience for international students who might be unfamiliar with Singapore:
+
+- User-friendly product browsing with detailed descriptions
+- Simple rental duration selection
+- Streamlined checkout process
+- Secure payment processing
+- Automated rental period tracking
+- Delivery scheduling system
+
+<Callout type="info" title="Engineering Challenge">
+One of our biggest technical challenges was creating a dynamic inventory management system that could track items through their complete rental lifecycle - from warehouse to student and back again - while maintaining accurate availability for new bookings.
+</Callout>
+
+### Payment Processing System
+
+<CodeDemo title="Payment Flow Architecture">
+```python
+# Django view for processing payments
+def process_payment(request):
+    # Validate payment details
+    payment_data = validate_payment_form(request.POST)
+    
+    # Create order in database
+    order = create_order(
+        user=request.user,
+        items=get_cart_items(request),
+        delivery_date=payment_data['delivery_date'],
+        rental_duration=payment_data['rental_duration']
+    )
+    
+    # Process payment through payment gateway
+    payment_result = payment_gateway.process_payment(
+        amount=order.total_amount,
+        currency="SGD",
+        payment_method=payment_data['payment_method'],
+        customer_details=payment_data['customer_details']
+    )
+    
+    if payment_result.is_successful:
+        # Update inventory availability
+        update_inventory(order.items)
+        
+        # Send confirmation emails
+        send_order_confirmation(order)
+        
+        # Schedule delivery
+        schedule_delivery(order)
+        
+        return redirect('order_confirmation', order_id=order.id)
+    else:
+        # Handle payment failure
+        return render_payment_error(request, payment_result.error)
+```
+</CodeDemo>
+We processed over $10,000 SGD in payments through our platform, with a focus on security and reliability. Our payment system:
+
+- Supported multiple payment methods for international students
+- Implemented secure payment processing
+- Automated receipt generation
+- Handled refund processes when necessary
+- Maintained detailed financial records for business operations
+
+### SEO Optimization & Analytics
+I implemented comprehensive SEO strategies to improve organic discovery:
+
+- Keyword research targeted to exchange student needs
+- Content optimization for Singapore-specific search terms
+- Technical SEO improvements for site performance
+- Local SEO to target students arriving in Singapore
+- Backlink building with university resources
+
+Additionally, I set up real-time analytics tracking to understand user behavior:
+
+- Conversion funnel analysis
+- Product popularity tracking
+- Seasonal demand patterns
+- User journey mapping
+- Marketing campaign effectiveness measurement
+
+<Timeline events={[
+{ date: "December 2016", title: "Dormbuddy Founded", description: "Started with initial concept and market research" },
+{ date: "February 2017", title: "MVP Launch", description: "Released first version of the e-commerce platform" },
+{ date: "August 2017", title: "First Semester Success", description: "Completed first full semester of operations" },
+{ date: "January 2018", title: "Platform Expansion", description: "Added more product categories and enhanced features" },
+{ date: "August 2019", title: "Business Transition", description: "Successfully operated until planned transition" }
+]} />
+
+### Technical Architecture
+The platform was built with a pragmatic approach to technology, balancing functionality, development speed, and reliability:
+
+- **Backend**: Django framework for rapid development and robust features
+- **Database**: PostgreSQL for reliable data storage
+- **Frontend**: Custom HTML/CSS/JS for optimized user experience
+- **Server**: NGINX for high-performance web serving
+- **Deployment**: Manual deployment pipelines for reliability
+- **Monitoring**: Real-time system monitoring for uptime and performance
+
+### Business Impact
+Dormbuddy had significant impact for both our business and our student customers:
+
+- For Business: Generated over $10,000 SGD in revenue with minimal transaction costs
+- For Students: Saved an average of 70% compared to buying new items
+- For Environment: Reduced waste by reusing items across multiple semesters
+- For Universities: Provided a valuable service that enhanced student experience
+
+<Callout type="success" title="Financial Efficiency">
+By developing our own e-commerce platform instead of using third-party solutions, we were able to process payments with minimal transaction fees - just $5 total cost over $10,000 in transactions, representing a 99.95% cost efficiency.
+</Callout>
+
+### Lessons Learned
+Building Dormbuddy as a co-founder and CTO taught me valuable lessons about entrepreneurship and technical leadership:
+
+1. Market fit is critical: Understanding the precise needs of exchange students was key to our success
+2. Technical pragmatism: Choosing the right technology for the job rather than the trendiest option
+3. Cost-efficiency focus: Building systems that minimize operational costs for higher margins
+4. SEO as a customer acquisition channel: The power of organic search for reaching target customers
+5. Data-driven decision making: Using analytics to guide product and business decisions
+
+<ProjectLink href="https://sites.google.com/a/ntuentrepreneur.org/b42-43g7/pratyum" text="Learn About Dormbuddy" />
+This project was my first significant entrepreneurial venture, combining technical development with business operations. It provided invaluable experience in building customer-facing applications with real business impact, while solving a genuine problem for students.
