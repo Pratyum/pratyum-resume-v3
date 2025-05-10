@@ -181,8 +181,7 @@ const components = {
 const CaseDetailsClient = ({
   caseId,
   caseData,
-  nextCaseTitle,
-  nextCaseImgUrl,
+  nextCase,
   nextCaseObjectPosition,
 }) => {
   const { view, setScrollDir } = useAppContext();
@@ -242,8 +241,8 @@ useEffect(() => {
     }
   };
 
-  const { url, title, desc, objectPosition, pages, nextCaseId } = frontMatter;
-
+  const { url, title, desc, objectPosition, pages } = frontMatter;
+  console.log("frontMatter", { url, title, desc, objectPosition, pages });
   const renderPageType = (pageInfo) => {
     const { type } = pageInfo;
     switch (type) {
@@ -484,24 +483,32 @@ useEffect(() => {
         >
           <img
             className={styles.main_page_image}
-            src={nextCaseImgUrl}
-            alt={nextCaseTitle}
+            src={nextCase.url}
+            alt={nextCase.title}
             style={{
               opacity: 0.5,
-              ...(nextCaseObjectPosition && {
-                objectPosition: nextCaseObjectPosition,
+              ...(nextCase.objectPosition && {
+                objectPosition: nextCase.objectPosition,
               }),
             }}
           />
           <div className={styles.last_page_text_wrapper}>
-            {nextCaseId && (
-              <div className={styles.next_up_wrapper}>
-                {`Next up - ${nextCaseTitle}`}
-              </div>
+            {frontMatter.nextCaseId && (
+              <SlidingText
+                as="a"
+                target="_blank"
+                href={`/cases/${frontMatter.nextCaseId}`}
+                text={`Next up - ${nextCase.title}`}
+              />
             )}
-            <a href={nextCaseId ? `/cases/${nextCaseId}` : "/cases"}>
-              explore
-            </a>
+            {!frontMatter.nextCaseId &&(
+              <SlidingText
+                as="a"
+                target="_blank"
+                href={`/cases`}
+                text={`Explore`}
+              />
+            )}
           </div>
         </div>
       </main>

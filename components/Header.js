@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/Header.module.css';
+import Image from 'next/image';
 
 const Header = ({ logoColor, delay }) => {
     return (
@@ -18,7 +19,7 @@ const Header = ({ logoColor, delay }) => {
                             '--logo-color': logoColor,
                         }}
                     >
-                        PJ
+                        <Image src={'/images/logo.webp'} alt="Pratyum Jagannath" width={32} height={32} />
                     </div>
                 </Link>
             </motion.div>

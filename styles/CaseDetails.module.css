@@ -81,7 +81,6 @@
 
 /* Code blocks */
 .mdx_pre {
-    margin: 1.5rem 0;
     padding: 0;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -89,7 +88,6 @@
 
 .mdx_code_container {
     position: relative;
-    margin: 1.5rem 0;
 }
 
 .mdx_code_language {
@@ -254,7 +252,7 @@
 }
 
 .mdx_code_demo {
-    margin: 2rem 0;
+    margin: 0rem 0;
     border-radius: 0.5rem;
     overflow: hidden;
     border: 1px solid #e2e8f0;
@@ -268,7 +266,7 @@
 }
 
 .mdx_code_demo_content {
-    padding: 1.5rem;
+    padding: .5rem;
 }
 
 .mdx_image_grid {
@@ -367,8 +365,8 @@
 .mdx_timeline_item:before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0.25rem;
+    left: 0.5rem;
+    top: 0;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -458,6 +456,7 @@
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 24px;
 }
 
 .container {
@@ -740,7 +739,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    translate: -50% -50%;
+    translate: -10% -50%;
     text-align: center;
     width: 100%;
 }
