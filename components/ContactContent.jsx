@@ -26,7 +26,7 @@ export const ContactContent = () => {
                     <div>
                         <h2 className={styles.heading2}>Write to me</h2>
                         <div className={styles.sliding_text}>
-                            <SlidingText as="a" href="mailto:hello@pratyumjagan.in" text={'hello@pratyumjagan.com'} />
+                            <SlidingText as="a" href="mailto:hi@pratyum.in" text={'hi@pratyum.in'} />
                         </div>
                     </div>
                     <div>

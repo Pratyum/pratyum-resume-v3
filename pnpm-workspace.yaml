@@ -1,9 +1,10 @@
 packages:
-  - 'app/**'
-  - 'components/**'
-  - 'context/**'
-  - 'utils/**'
-  - 'assets/**'
+  - app/**
+  - components/**
+  - context/**
+  - utils/**
+  - assets/**
 
 onlyBuiltDependencies:
   - sharp
+  - unrs-resolver

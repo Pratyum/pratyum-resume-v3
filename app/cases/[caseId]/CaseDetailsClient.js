@@ -1,9 +1,181 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import styles from "@/styles/CaseDetails.module.css";
 import { useAppContext } from "@/context/AppContext";
 import StructuredData from "@/components/StructuredData";
+import { MDXRemote } from "next-mdx-remote";
+
+const components = {
+  // Headings
+  h1: (props) => <h1 className={styles.mdx_h1} {...props} />,
+  h2: (props) => <h2 className={styles.mdx_h2} {...props} />,
+  h3: (props) => <h3 className={styles.mdx_h3} {...props} />,
+  h4: (props) => <h4 className={styles.mdx_h4} {...props} />,
+  h5: (props) => <h5 className={styles.mdx_h5} {...props} />,
+  h6: (props) => <h6 className={styles.mdx_h6} {...props} />,
+  
+  // Text elements
+  p: (props) => <div className={styles.mdx_p} {...props} />,
+  blockquote: (props) => <blockquote className={styles.mdx_blockquote} {...props} />,
+  
+  // Lists
+  ul: (props) => <ul className={styles.mdx_ul} {...props} />,
+  ol: (props) => <ol className={styles.mdx_ol} {...props} />,
+  li: (props) => <li className={styles.mdx_li} {...props} />,
+  
+  // Code blocks
+  pre: (props) => <pre className={styles.mdx_pre} {...props} />,
+  code: ({ className, ...props }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    const language = match ? match[1] : '';
+    return (
+      <div className={styles.mdx_code_container}>
+        {language && <span className={styles.mdx_code_language}>{language}</span>}
+        <code className={`${styles.mdx_code} ${className || ''}`} {...props} />
+      </div>
+    );
+  },
+  inlineCode: (props) => <code className={styles.mdx_inline_code} {...props} />,
+  
+  // Tables
+  table: (props) => <table className={styles.mdx_table} {...props} />,
+  thead: (props) => <thead className={styles.mdx_thead} {...props} />,
+  tbody: (props) => <tbody className={styles.mdx_tbody} {...props} />,
+  tr: (props) => <tr className={styles.mdx_tr} {...props} />,
+  th: (props) => <th className={styles.mdx_th} {...props} />,
+  td: (props) => <td className={styles.mdx_td} {...props} />,
+  
+  // Horizontal rule
+  hr: () => <hr className={styles.mdx_hr} />,
+  
+  // Links and images
+  a: ({ href, children, ...props }) => (
+    <a 
+      href={href} 
+      className={styles.mdx_a}
+      target={href.startsWith('http') ? '_blank' : undefined}
+      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+  img: (props) => (
+    <div className={styles.mdx_img_container}>
+      <img 
+        className={styles.mdx_img} 
+        alt={props.alt || ''} 
+        loading="lazy"
+        {...props} 
+      />
+      {/* {props.alt && <figcaption className={styles.mdx_img_caption}>{props.alt}</figcaption>} */}
+    </div>
+  ),
+  
+  // Custom components
+  TechStack: ({ technologies }) => (
+    <div className={styles.mdx_tech_stack}>
+      <h3 className={styles.mdx_tech_stack_title}>Technologies Used</h3>
+      <div className={styles.mdx_tech_stack_list}>
+        {technologies.map((tech, index) => (
+          <span key={index} className={styles.mdx_tech_badge}>
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  ),
+  
+  KeyPoints: ({ children }) => (
+    <div className={styles.mdx_key_points}>
+      {children}
+    </div>
+  ),
+  
+  ProjectLink: ({ href, text }) => (
+    <a 
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.mdx_project_link}
+    >
+      <span>{text || 'View Project'}</span>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="20" 
+        height="20" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      >
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        <polyline points="15 3 21 3 21 9" />
+        <line x1="10" y1="14" x2="21" y2="3" />
+      </svg>
+    </a>
+  ),
+  
+  CodeDemo: ({ title, children }) => (
+    <div className={styles.mdx_code_demo}>
+      {title && <div className={styles.mdx_code_demo_title}>{title}</div>}
+      <div className={styles.mdx_code_demo_content}>
+        {children}
+      </div>
+    </div>
+  ),
+  
+  ImageGrid: ({ images }) => (
+    <div className={styles.mdx_image_grid}>
+      {images.map((img, index) => (
+        <div key={index} className={styles.mdx_image_grid_item}>
+          <img 
+            src={img.src} 
+            alt={img.alt || ''} 
+            className={styles.mdx_grid_img}
+          />
+        </div>
+      ))}
+    </div>
+  ),
+  
+  VideoEmbed: ({ src, title }) => (
+    <div className={styles.mdx_video_container}>
+      <iframe
+        src={src}
+        title={title || 'Embedded video'}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className={styles.mdx_video}
+      />
+    </div>
+  ),
+  
+  Callout: ({ type = 'info', title, children }) => (
+    <div className={`${styles.mdx_callout} ${styles[`mdx_callout_${type}`]}`}>
+      {title && <div className={styles.mdx_callout_title}>{title}</div>}
+      <div className={styles.mdx_callout_content}>{children}</div>
+    </div>
+  ),
+  
+  Timeline: ({ events }) => (
+    <div className={styles.mdx_timeline}>
+      {events.map((event, index) => (
+        <div key={index} className={styles.mdx_timeline_item}>
+          <div className={styles.mdx_timeline_date}>{event.date}</div>
+          <div className={styles.mdx_timeline_content}>
+            <h4 className={styles.mdx_timeline_title}>{event.title}</h4>
+            <p className={styles.mdx_timeline_description}>{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+};
 
 const CaseDetailsClient = ({
   caseId,
@@ -13,30 +185,51 @@ const CaseDetailsClient = ({
   nextCaseObjectPosition,
 }) => {
   const { view, setScrollDir } = useAppContext();
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const mainRef = useRef(null);
+  const { mdxSource, frontMatter } = caseData;
 
-  useEffect(() => {
-    const main = document.querySelector("#main");
-    const scrollEvent = () => {
-      const currentScrollPosition = main.scrollTop;
-
-      if (currentScrollPosition > scrollPosition) {
-        setScrollDir("down");
-      } else {
-        setScrollDir("up");
-      }
-
-      setScrollPosition(currentScrollPosition);
-    };
-
-    main.addEventListener("scroll", scrollEvent);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      main.removeEventListener("scroll", scrollEvent);
-      document.body.style.overflow = "auto";
-    };
-  }, [scrollPosition]);
+  // Set up scroll detection with proper cleanup and dependencies
+useEffect(() => {
+  // Get the main container - use ref instead of querySelector for reliability
+  const mainElement = mainRef.current;
+  
+  if (!mainElement) return; // Safety check
+  
+  // Make sure the main container is styled for scrolling
+  mainElement.style.height = '100vh'; // Set height to viewport height
+  mainElement.style.overflowY = 'auto'; // Enable vertical scrolling
+  mainElement.style.overflowX = 'hidden'; // Prevent horizontal scrolling
+  
+  let lastScrollTop = 0; // Use a local variable instead of state to avoid re-renders
+  
+  const scrollEvent = () => {
+    const currentScrollTop = mainElement.scrollTop;
+    
+    // Determine scroll direction
+    if (currentScrollTop > lastScrollTop) {
+      setScrollDir("down");
+    } else if (currentScrollTop < lastScrollTop) {
+      setScrollDir("up");
+    }
+    
+    // Update for next comparison
+    lastScrollTop = currentScrollTop;
+  };
+  
+  // Add scroll event listener
+  mainElement.addEventListener('scroll', scrollEvent);
+  
+  // Prevent body scrolling but allow main container to scroll
+  document.body.style.overflow = 'hidden';
+  
+  // Cleanup function
+  return () => {
+    if (mainElement) {
+      mainElement.removeEventListener('scroll', scrollEvent);
+    }
+    document.body.style.overflow = 'auto';
+  };
+}, [setScrollDir]);
 
   const getLogoColor = (caseId) => {
     switch (caseId) {
@@ -48,11 +241,10 @@ const CaseDetailsClient = ({
     }
   };
 
-  const { url, title, desc, objectPosition, pages, nextCaseId } = caseData;
+  const { url, title, desc, objectPosition, pages, nextCaseId } = frontMatter;
 
   const renderPageType = (pageInfo) => {
     const { type } = pageInfo;
-
     switch (type) {
       case "info":
         return (
@@ -248,7 +440,7 @@ const CaseDetailsClient = ({
   return (
     <>
     <div className={styles.container}>
-      <main className={styles.main} id="main">
+      <main className={styles.main} ref={mainRef} id="main">
         {/* main page */}
         <div className={styles.main_page}>
           <Header logoColor={getLogoColor(caseId)} delay={0} />
@@ -279,6 +471,12 @@ const CaseDetailsClient = ({
               );
             })
           : renderDesktopPages()}
+        {/* Add MDX content as an additional scrollable section */}
+        <section className={styles.mdx_section}>
+          <div className={styles.mdx_content_wrapper}>
+            <MDXRemote {...mdxSource} components={components} />
+          </div>
+        </section>
 
         {/* last page */}
         <div

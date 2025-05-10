@@ -1,4 +1,5 @@
 import { CaseContent } from '@/components/CaseContent';
+import { getAllCases } from '@/lib/mdx';
 
 export const metadata = {
     title: 'Projects',
@@ -9,8 +10,7 @@ export const metadata = {
     },
 };
   
-const Cases = () => {
-    return <CaseContent />;
+export default async function Cases() {
+  const cases = await getAllCases();
+  return <CaseContent cases={cases} />;
 }
-
-export default Cases;
