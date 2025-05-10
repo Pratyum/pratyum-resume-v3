@@ -1,5 +1,4 @@
 'use client'
-import { casesData } from "@/assets/data/cases-data";
 import { useAppContext } from "@/context/AppContext";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -8,7 +7,7 @@ import Filter from "./Filter";
 import styles from '@/styles/Cases.module.css';
 import { motion } from 'framer-motion';
 
-export const CaseContent = () => {
+export const CaseContent = ({cases}) => {
     const DESKTOP_RIGHT_RIGHT_SPEED = 2.81;
     const { view, isFilterOpen, setIsFilterOpen, selectedFilter } =
         useAppContext();
@@ -34,10 +33,10 @@ export const CaseContent = () => {
 
     // filter casesData then divide into 2(mobile) and 4(desktop) columns
     useEffect(() => {
-        const filteredCases = casesData.filter((caseData) =>
+        const filteredCases = cases.filter((caseData) =>
             caseData.filterBy.includes(selectedFilter)
         );
-        const leftoverCases = casesData.filter(
+        const leftoverCases = cases.filter(
             (caseData) => !caseData.filterBy.includes(selectedFilter)
         );
 

@@ -5,6 +5,7 @@ import styles from "@/styles/CaseDetails.module.css";
 import { useAppContext } from "@/context/AppContext";
 import StructuredData from "@/components/StructuredData";
 import { MDXRemote } from "next-mdx-remote";
+import SlidingText from "@/components/SlidingText";
 
 const components = {
   // Headings
@@ -260,9 +261,7 @@ useEffect(() => {
               <h2>{pageInfo.heading1}</h2>
               <p>{pageInfo.desc1}</p>
               <p>{pageInfo.desc2}</p>
-              <a target="_blank" href={pageInfo.redirectUrl}>
-                <div>visit platform</div>
-              </a>
+              <SlidingText as="a" target="_blank" href={pageInfo.redirectUrl} text="Visit platform"/>
             </div>
             <div className={styles.info_page_bottom_container}>
               <div>

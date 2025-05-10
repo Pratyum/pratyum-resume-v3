@@ -1,6 +1,7 @@
-import { casesData } from '@/assets/data/cases-data';
+import { getAllCases } from '@/lib/mdx';
 
 export default async function sitemap() {
+  const casesData = await getAllCases();
   // Get all case studies
   const cases = casesData.map((caseItem) => ({
     url: `https://pratyumjagan.in/cases/${caseItem.caseId}`,
