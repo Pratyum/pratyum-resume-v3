@@ -17,7 +17,7 @@ const components = {
   h6: (props) => <h6 className={styles.mdx_h6} {...props} />,
   
   // Text elements
-  p: (props) => <div className={styles.mdx_p} {...props} />,
+  p: (props) => <p className={styles.mdx_p} {...props} />,
   blockquote: (props) => <blockquote className={styles.mdx_blockquote} {...props} />,
   
   // Lists

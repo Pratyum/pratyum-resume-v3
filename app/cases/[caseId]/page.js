@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${frontMatter.title} | Pratyum Jagannath - Full Stack Developer`,
     description,
-    keywords: [...(frontMatter.keywords || []), ...frontMatter.filterBy, 'Pratyum Jagannath', 'Full Stack Developer'],
+    keywords: [...(frontMatter.keywords || []), ...(frontMatter.filterBy || []), 'Pratyum Jagannath', 'Full Stack Developer'],
     openGraph: {
       title: frontMatter.title,
       description,
