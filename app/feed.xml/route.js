@@ -1,6 +1,7 @@
 // app/feed.xml/route.js
 import { getAllCases } from '@/lib/mdx';
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://pratyumjagan.in';
 export async function GET() {
   const cases = await getAllCases();
   
@@ -8,17 +9,17 @@ export async function GET() {
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
         <title>Pratyum Jagannath - Projects</title>
-        <link>https://pratyumjagan.in/cases</link>
+        <link>${BASE_URL}/cases</link>
         <description>Full Stack Developer Projects and Case Studies</description>
         <language>en</language>
-        <atom:link href="https://pratyumjagan.in/feed.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="${BASE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
         ${cases.map(caseItem => `
           <item>
             <title>${caseItem.title}</title>
-            <link>https://pratyumjagan.in/cases/${caseItem.caseId}</link>
+            <link>${BASE_URL}/cases/${caseItem.caseId}</link>
             <description>${caseItem.desc}</description>
             <pubDate>${new Date(caseItem.date).toUTCString()}</pubDate>
-            <guid>https://pratyumjagan.in/cases/${caseItem.caseId}</guid>
+            <guid>${BASE_URL}/cases/${caseItem.caseId}</guid>
           </item>
         `).join('')}
       </channel>
