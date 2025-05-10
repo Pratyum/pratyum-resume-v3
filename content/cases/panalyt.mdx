@@ -1,0 +1,155 @@
+---
+title: "Panalyt"
+desc: "HR Analytics Platform connecting complex HR data to actionable insights."
+url: "/images/panalyt.webp"
+date: "2021-10-01"
+lastModified: "2024-05-01"
+tag: "Most Viewed"
+filterBy: ["Analytics", "Java", "React", "nivo", "d3", "chart"]
+objectPosition: "36.29% 43.94%"
+nextCaseId: "nas-io"
+nextCaseTitle: "Nas IO"
+pages:
+  - type: "info"
+    heading1: "Innovative HR Insights"
+    desc1: "At Panalyt, we transformed raw HR data into dynamic dashboards that empower decision-makers with interactive, filterable insights."
+    desc2: "Our SaaS platform secured $4.2M in Series A funding by delivering a robust authentication system, scalable data pipelines, and advanced role management—supporting data volumes from 10GB to 100GB."
+    redirectUrl: "https://panalyt.com"
+    heading2: "Key Achievements"
+    heading2List:
+      - "Secured Series A funding ($4.2M)"
+      - "Developed a comprehensive role management system"
+      - "Designed a high-performance data pipeline"
+      - "Led a diverse team across three countries"
+      - "Onboarded 10+ enterprise clients"
+    heading3: "Technical Highlights"
+    heading3List:
+      - "React for dynamic dashboards"
+      - "Java backend for robust processing"
+      - "nivo and d3 for advanced visualizations"
+      - "Real-time API integrations"
+  - type: "fullscreen-image"
+    imageUrl: "/images/panalyt-insight.webp"
+    alt: "Dashboard Visualization"
+    objectPosition: "50% 50%"
+  - type: "centered-text"
+    gridPlacement: "full"
+    heading: "Empowering HR Decisions"
+    desc: "We turn raw numbers into clear, actionable insights that drive organizational change and enhance strategic decision-making."
+---
+
+# Panalyt: Transforming HR Analytics
+
+<TechStack technologies={["React", "Django", "Postgres", "Chart.js", "Google App Engine (Java)", "Datastore", "BigQuery", "Kubernetes"]} />
+
+## The Challenge
+
+Modern enterprises struggle with fragmented HR data spread across multiple systems, making it difficult to gain actionable insights. HR teams need to make critical workforce decisions but lack the data visibility to do so effectively. Our challenge was to create a comprehensive analytics platform that could:
+
+- Unify disparate HR data sources
+- Process large volumes of data (10-100GB) efficiently
+- Provide intuitive visualizations for non-technical HR users
+- Ensure stringent data security and role-based access
+
+## Our Solution
+
+As Co-Founder and Lead Software Engineer at Panalyt, I led the development of a SaaS platform that revolutionized how organizations understand their workforce data.
+
+<ImageGrid images={[
+  { src: "/images/panalyt-dashboard.webp", alt: "Panalyt Dashboard" },
+  { src: "/images/panalyt-filters.webp", alt: "Interactive Filtering" }
+]} />
+
+### Authentication & Role Management System
+
+<Callout type="info" title="Security-First Approach">
+With HR data being highly sensitive, security was paramount in our design. We implemented a sophisticated role management system that provided fine-grained access control down to the individual data point level.
+</Callout>
+
+I designed and implemented a comprehensive authentication and role management system with granular permissions that allowed:
+
+- Row-level security for sensitive employee data
+- Custom data views based on user roles
+- Precise control over who could see what data
+- Single sign-on integration with enterprise systems
+
+### Scalable Data Processing Pipeline
+
+One of our biggest technical challenges was handling large volumes of HR data (10-100GB) efficiently. I architected a data pipeline that could:
+
+<CodeDemo title="Data Pipeline Architecture">
+```javascript
+// Simplified pipeline flow
+const dataProcessingPipeline = {
+  ingest: (dataSources) => {
+    // Connect to multiple HR systems via APIs
+    // ETL processes for data normalization
+    return normalizedData;
+  },
+  
+  transform: (normalizedData) => {
+    // Apply business rules
+    // Calculate metrics and KPIs
+    return processedData;
+  },
+  
+  store: (processedData) => {
+    // Store in Google BigQuery for analytics
+    // Cache frequent queries
+    return dataReady;
+  },
+  
+  serve: (dataReady, userPermissions) => {
+    // Apply row-level security filters
+    // Prepare data for visualization
+    return securedData;
+  }
+};
+```
+</CodeDemo>
+This pipeline processed data from multiple sources, normalized it, applied business rules, and made it available for visualization—all while maintaining sub-second query performance.
+### Team Leadership
+Beyond the technical aspects, I led a diverse team of 10 developers across Singapore, Japan, and Vietnam. This required:
+
+- Establishing clear communication protocols across time zones
+- Implementing agile methodologies adapted for distributed teams
+- Creating detailed technical documentation and knowledge sharing
+- Mentoring junior developers and building technical capacity
+
+<Timeline events={[
+{ date: "July 2017", title: "Project Inception", description: "Founded Panalyt with a vision to transform HR analytics" },
+{ date: "March 2018", title: "MVP Launch", description: "Released initial platform with core functionality" },
+{ date: "January 2019", title: "First Enterprise Client", description: "Onboarded our first major client with 5,000+ employees" },
+{ date: "August 2020", title: "Series A Funding", description: "Secured $4.2M in Series A funding to scale operations" },
+{ date: "October 2021", title: "Expansion", description: "Grew to 10+ enterprise clients across multiple countries" }
+]} />
+### Business Impact
+Our platform had significant business impact for both Panalyt and our clients:
+
+- For Panalyt: Secured $4.2M in Series A funding and established a solid client base
+- For Clients: Provided actionable insights that improved workforce decision-making, resulting in:
+    - 15% reduction in employee turnover for key roles
+    - 20% improvement in hiring efficiency
+    - 30% better workforce planning accuracy
+
+### Technical Architecture
+The platform was built on a modern tech stack that balanced performance, scalability, and developer productivity:
+
+- *Frontend*: React with D3.js and Chart.js for interactive visualizations
+- *Backend*: Django for API services with Java microservices for data processing
+- *Database*: PostgreSQL for relational data with Google BigQuery for analytics
+- *Infrastructure*: Google App Engine, Kubernetes for container orchestration
+- *CI/CD*: Automated testing and deployment pipelines
+
+<ProjectLink href="https://panalyt.com" text="Visit Panalyt" />
+
+### Lessons Learned
+This project taught me valuable lessons about building enterprise SaaS products:
+
+1. Balance technical debt: Make pragmatic decisions about when to optimize vs. when to ship
+2. Invest in infrastructure: Solid infrastructure pays dividends in reliability and scalability
+3. Data security first: In HR analytics, security cannot be an afterthought
+4. Cross-cultural team dynamics: Leading distributed teams requires cultural awareness and clear communication
+5. Client feedback loops: Regular client feedback improves product-market fit
+
+Building Panalyt from the ground up was a formative experience that honed my skills in full-stack development, data engineering, and technical leadership.

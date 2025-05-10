@@ -1,8 +1,10 @@
+import createMDX from '@next/mdx';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    remotePatterns: [],
     formats: ['image/webp', 'image/avif'], // Add AVIF support
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -12,6 +14,7 @@ const nextConfig = {
     reactRemoveProperties: process.env.NODE_ENV === 'production',
     removeConsole: process.env.NODE_ENV === 'production'
   },
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Add Webpack config for bundle size optimization
   webpack: (config, { dev, isServer }) => {
     // Only run in production client-side build
@@ -79,5 +82,9 @@ const nextConfig = {
     ],
   },
 }
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+})
 
-module.exports = nextConfig
+// Merge MDX config with Next.js config
+export default withMDX(nextConfig)
