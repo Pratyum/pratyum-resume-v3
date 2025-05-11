@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const caseData = await getCaseData(params.caseId);
   const { frontMatter } = caseData;
-  console.log({frontMatter});
+  console.warn({frontMatter});
   // Extract first paragraph for description if not provided
   const description = frontMatter.desc || frontMatter.excerpt || 
     frontMatter.content?.substring(0, 160).replace(/\n/g, ' ') + '...';
