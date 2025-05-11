@@ -45,8 +45,23 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CaseDetails({ params }) {
-  const caseData = await getCaseData(params.caseId);
+  // Guard against missing case data
+  if (!caseData || !caseData.frontMatter) {
+    // Handle missing case data (redirect or show error)
+    return <div>Case not found</div>;
+  }
+  
   const allCases = await getAllCases();
-  const nextCase = allCases.find(item => item.caseId === caseData.frontMatter.nextCaseId);
+  
+  // Find the next case or use a fallback
+  let nextCase;
+  if (caseData.frontMatter.nextCaseId) {
+    nextCase = allCases.find(item => item.caseId === caseData.frontMatter.nextCaseId);
+  }
+  
+  // If nextCase is still undefined, use the first case from allCases as a fallback
+  if (!nextCase && allCases.length > 0) {
+    nextCase = allCases[0];
+  }
   return <CaseDetailsClient caseId={params.caseId} caseData={caseData} nextCase={nextCase} />;
 }

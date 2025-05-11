@@ -182,7 +182,6 @@ const CaseDetailsClient = ({
   caseId,
   caseData,
   nextCase,
-  nextCaseObjectPosition,
 }) => {
   const { view, setScrollDir } = useAppContext();
   const mainRef = useRef(null);
