@@ -45,6 +45,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CaseDetails({ params }) {
+  const caseData = await getCaseData(params.caseId);
   // Guard against missing case data
   if (!caseData || !caseData.frontMatter) {
     // Handle missing case data (redirect or show error)
