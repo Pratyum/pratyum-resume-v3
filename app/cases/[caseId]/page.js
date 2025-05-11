@@ -1,5 +1,6 @@
 import { getAllCaseIds, getCaseData, getAllCases } from '@/lib/mdx';
 import CaseDetailsClient from './CaseDetailsClient';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   return getAllCaseIds();
@@ -64,5 +65,5 @@ export default async function CaseDetails({ params }) {
   if (!nextCase && allCases.length > 0) {
     nextCase = allCases[0];
   }
-  return <CaseDetailsClient caseId={params.caseId} caseData={caseData} nextCase={nextCase} />;
+  return <Suspense fallback={<div>Loading...</div>}><CaseDetailsClient caseId={params.caseId} caseData={caseData} nextCase={nextCase} /></Suspense>;
 }
