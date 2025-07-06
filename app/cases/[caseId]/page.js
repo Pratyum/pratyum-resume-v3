@@ -1,10 +1,6 @@
-import { getAllCaseIds, getCaseData, getAllCases } from '@/lib/mdx';
+import { getCaseData, getAllCases } from '@/lib/mdx';
 import CaseDetailsClient from './CaseDetailsClient';
 import { Suspense } from 'react';
-
-export async function generateStaticParams() {
-  return getAllCaseIds();
-}
 
 export async function generateMetadata({ params }) {
   const caseData = await getCaseData(params.caseId);
