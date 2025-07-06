@@ -3,13 +3,11 @@ import CaseDetailsClient from './CaseDetailsClient';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
-  const caseIds = await getAllCaseIds();
-  return caseIds;
+  return getAllCaseIds();
 }
 
 export async function generateMetadata({ params }) {
-  const { caseId } = await params;
-  const caseData = await getCaseData(caseId);
+  const caseData = await getCaseData(params.caseId);
   const { frontMatter } = caseData;
   if (!caseData?.frontMatter) {
       return {
