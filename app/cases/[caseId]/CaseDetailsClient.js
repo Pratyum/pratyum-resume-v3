@@ -1,10 +1,9 @@
 'use client';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import styles from "@/styles/CaseDetails.module.css";
 import { useAppContext } from "@/context/AppContext";
 import StructuredData from "@/components/StructuredData";
-import { MDXRemote } from "next-mdx-remote";
 import SlidingText from "@/components/SlidingText";
 
 const components = {
@@ -469,11 +468,11 @@ useEffect(() => {
             })
           : renderDesktopPages()}
         {/* Add MDX content as an additional scrollable section */}
-        <section className={styles.mdx_section}>
+        {/* <section className={styles.mdx_section}>
           <div className={styles.mdx_content_wrapper}>
             <MDXRemote {...mdxSource} components={components} />
           </div>
-        </section>
+        </section> */}
 
         {/* last page */}
         <div

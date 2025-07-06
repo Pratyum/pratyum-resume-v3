@@ -3,13 +3,21 @@ import CaseDetailsClient from './CaseDetailsClient';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
-  return getAllCaseIds();
+  const caseIds = await getAllCaseIds();
+  return caseIds;
 }
 
 export async function generateMetadata({ params }) {
-  const caseData = await getCaseData(params.caseId);
+  const { caseId } = await params;
+  const caseData = await getCaseData(caseId);
   const { frontMatter } = caseData;
-  console.warn({frontMatter});
+  if (!caseData?.frontMatter) {
+      return {
+        title: 'Case Not Found',
+        description: 'The requested case study could not be found.'
+      };
+    }
+
   // Extract first paragraph for description if not provided
   const description = frontMatter.desc || frontMatter.excerpt || 
     frontMatter.content?.substring(0, 160).replace(/\n/g, ' ') + '...';
@@ -46,7 +54,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CaseDetails({ params }) {
-  const caseData = await getCaseData(params.caseId);
+  const {caseId} = await params;
+  const caseData = await getCaseData(caseId);
   // Guard against missing case data
   if (!caseData || !caseData.frontMatter) {
     // Handle missing case data (redirect or show error)
