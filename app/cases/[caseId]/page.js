@@ -1,15 +1,17 @@
-import { getAllCaseIds, getCaseData, getAllCases } from '@/lib/mdx';
+import { getCaseData, getAllCases } from '@/lib/mdx';
 import CaseDetailsClient from './CaseDetailsClient';
 import { Suspense } from 'react';
-
-export async function generateStaticParams() {
-  return getAllCaseIds();
-}
 
 export async function generateMetadata({ params }) {
   const caseData = await getCaseData(params.caseId);
   const { frontMatter } = caseData;
-  console.warn({frontMatter});
+  if (!caseData?.frontMatter) {
+      return {
+        title: 'Case Not Found',
+        description: 'The requested case study could not be found.'
+      };
+    }
+
   // Extract first paragraph for description if not provided
   const description = frontMatter.desc || frontMatter.excerpt || 
     frontMatter.content?.substring(0, 160).replace(/\n/g, ' ') + '...';
