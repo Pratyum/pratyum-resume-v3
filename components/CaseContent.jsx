@@ -85,7 +85,7 @@ export const CaseContent = ({cases}) => {
                 rightRight: rightRight,
             },
         }));
-    }, [selectedFilter]);
+    }, [selectedFilter, cases]);
 
     const getTotalScrollable = () =>
         document.documentElement.scrollHeight - window.innerHeight;
