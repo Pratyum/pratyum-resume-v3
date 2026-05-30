@@ -75,7 +75,7 @@ const nextConfig = {
     // Domains for localization (optional)
     domains: [
       {
-        domain: 'pratyumjagan.in',
+        domain: 'pratyum.xyz',
         defaultLocale: 'en',
       },
       // Add other domains for other languages when needed

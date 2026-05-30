@@ -92,12 +92,15 @@ export const CaseContent = ({cases}) => {
 
     // for offset scrolling left and right columns
     useEffect(() => {
-        setColHeightDiff(
-            leftColRef?.current?.offsetHeight -
-                rightColRef?.current?.offsetHeight
-        );
+        if (leftColRef.current && rightColRef.current) {
+            setColHeightDiff(
+                leftColRef.current.offsetHeight -
+                    rightColRef.current.offsetHeight
+            );
+        }
 
         const onScroll = () => {
+            if (!rightColRef.current) return;
             const rightColOffsetTop = rightColRef.current.offsetTop;
             const totalScrollableAfterEl =
                 getTotalScrollable() - rightColOffsetTop;

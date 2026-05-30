@@ -5,6 +5,7 @@ import styles from "@/styles/CaseDetails.module.css";
 import { useAppContext } from "@/context/AppContext";
 import StructuredData from "@/components/StructuredData";
 import SlidingText from "@/components/SlidingText";
+import Image from "next/image";
 
 const components = {
   // Headings
@@ -63,10 +64,16 @@ const components = {
   ),
   img: (props) => (
     <div className={styles.mdx_img_container}>
-      <img 
+      <Image 
         className={styles.mdx_img} 
         alt={props.alt || ''} 
-        loading="lazy"
+        width={1200}
+        height={800}
+        sizes="(max-width: 768px) 100vw, 800px"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
         {...props} 
       />
       {/* {props.alt && <figcaption className={styles.mdx_img_caption}>{props.alt}</figcaption>} */}
@@ -132,10 +139,12 @@ const components = {
     <div className={styles.mdx_image_grid}>
       {images.map((img, index) => (
         <div key={index} className={styles.mdx_image_grid_item}>
-          <img 
+          <Image 
             src={img.src} 
             alt={img.alt || ''} 
             className={styles.mdx_grid_img}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
       ))}
@@ -293,10 +302,13 @@ useEffect(() => {
       case "fullscreen-image-with-text":
         return (
           <div className={styles.scroll_snap_wrapper}>
-            <img
+            <Image
               className={styles.fullscreen_image}
               src={pageInfo.imageUrl}
-              alt={pageInfo.alt}
+              alt={pageInfo.alt || ''}
+              fill
+              sizes="100vw"
+              priority
               style={{
                 ...(pageInfo.objectPosition && {
                   objectPosition: pageInfo.objectPosition,
@@ -440,10 +452,13 @@ useEffect(() => {
         {/* main page */}
         <div className={styles.main_page}>
           <Header logoColor={getLogoColor(caseId)} delay={0} />
-          <img
+          <Image
             className={styles.main_page_image}
             src={url}
-            alt={title}
+            alt={title || ''}
+            fill
+            sizes="100vw"
+            priority
             style={{
               ...(objectPosition && {
                 objectPosition: objectPosition,
@@ -479,10 +494,12 @@ useEffect(() => {
           className={styles.scroll_snap_wrapper}
           style={{ backgroundColor: "#000" }}
         >
-          <img
+          <Image
             className={styles.main_page_image}
             src={nextCase.url}
-            alt={nextCase.title}
+            alt={nextCase.title || ''}
+            fill
+            sizes="100vw"
             style={{
               opacity: 0.5,
               ...(nextCase.objectPosition && {
