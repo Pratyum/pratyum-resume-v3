@@ -82,9 +82,10 @@ const ResponsiveCardsLayout = () => {
     // for offset scrolling left and right columns
     useEffect(() => {
         const onScroll = () => {
+            if (!leftColRef.current || !rightColRef.current) return;
             setColHeightDiff(
-                leftColRef?.current?.offsetHeight -
-                    rightColRef?.current?.offsetHeight
+                leftColRef.current.offsetHeight -
+                    rightColRef.current.offsetHeight
             );
             const totalContainerHeight = containerRef?.current?.offsetHeight;
             const rightColOffsetTop = rightColRef.current.offsetTop;

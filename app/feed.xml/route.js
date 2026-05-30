@@ -1,10 +1,10 @@
 // app/feed.xml/route.js
 import { getAllCases } from '@/lib/mdx';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://pratyumjagan.in';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://pratyum.xyz';
 export async function GET() {
   const cases = await getAllCases();
-  
+
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>

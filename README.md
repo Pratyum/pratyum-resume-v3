@@ -1,1 +1,1 @@
-https://pratyumjagan.in
+https://pratyum.xyz

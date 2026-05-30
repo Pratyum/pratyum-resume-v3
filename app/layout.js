@@ -2,9 +2,9 @@ import Layout from '@/components/Layout';
 import { AppContextProvider } from '@/context/AppContext';
 import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
- 
+
 export const metadata = {
-  metadataBase: new URL('https://pratyumjagan.in'),
+  metadataBase: new URL('https://pratyum.xyz'),
   title: {
     template: '%s | Pratyum Jagannath - Full Stack Developer',
     default: 'Pratyum Jagannath - Full Stack Developer & Web3 Enthusiast',
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pratyumjagan.in',
+    url: 'https://pratyum.xyz',
     siteName: 'Pratyum Jagannath Portfolio',
     title: 'Pratyum Jagannath - Full Stack Developer & Web3 Enthusiast',
     description: 'Pratyum Jagannath is a Full Stack Developer specialized in React, Node.js, Python, and Web3 technologies with experience in building innovative applications.',
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
             {children}
           </Layout>
         </AppContextProvider>
-        <Analytics debug={isDev} mode={isDev ? 'development': 'production'} />
+        <Analytics debug={isDev} mode={isDev ? 'development' : 'production'} />
       </body>
     </html>
   );

@@ -6,16 +6,16 @@ export async function generateMetadata({ params }) {
   const caseData = await getCaseData(params.caseId);
   const { frontMatter } = caseData;
   if (!caseData?.frontMatter) {
-      return {
-        title: 'Case Not Found',
-        description: 'The requested case study could not be found.'
-      };
-    }
+    return {
+      title: 'Case Not Found',
+      description: 'The requested case study could not be found.'
+    };
+  }
 
   // Extract first paragraph for description if not provided
-  const description = frontMatter.desc || frontMatter.excerpt || 
+  const description = frontMatter.desc || frontMatter.excerpt ||
     frontMatter.content?.substring(0, 160).replace(/\n/g, ' ') + '...';
-  
+
   return {
     title: `${frontMatter.title} | Pratyum Jagannath - Full Stack Developer`,
     description,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
       images: [frontMatter.url],
     },
     alternates: {
-      canonical: `https://pratyumjagan.in/cases/${params.caseId}`,
+      canonical: `https://pratyum.xyz/cases/${params.caseId}`,
     },
   };
 }
@@ -54,15 +54,15 @@ export default async function CaseDetails({ params }) {
     // Handle missing case data (redirect or show error)
     return <div>Case not found</div>;
   }
-  
+
   const allCases = await getAllCases();
-  
+
   // Find the next case or use a fallback
   let nextCase;
   if (caseData.frontMatter.nextCaseId) {
     nextCase = allCases.find(item => item.caseId === caseData.frontMatter.nextCaseId);
   }
-  
+
   // If nextCase is still undefined, use the first case from allCases as a fallback
   if (!nextCase && allCases.length > 0) {
     nextCase = allCases[0];
