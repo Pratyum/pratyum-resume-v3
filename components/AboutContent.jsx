@@ -4,6 +4,7 @@ import { useAboutPage } from "@/hooks/use-about-page";
 import styles from "@/styles/About.module.css";
 import SlidingText from "./SlidingText";
 import ResponsiveCardsLayout from "./ResponsiveCardsLayout";
+import Image from "next/image";
 
 export const AboutContent = () => {
     const {
@@ -46,10 +47,12 @@ export const AboutContent = () => {
                                         className={styles.sliding_img_wrapper}
                                         key={idx}
                                     >
-                                        <img
+                                        <Image
                                             className={styles.sliding_img}
                                             src={img.imgUrl}
                                             alt={img.altText}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 42vw"
                                         />
                                     </div>
                                 ))}
@@ -167,9 +170,11 @@ export const AboutContent = () => {
                                             }) translateZ(0px)`,
                                         }}
                                     >
-                                        <img
+                                        <Image
                                             src='/images/nft_mint.webp'
                                             alt='NFT mint project'
+                                            fill
+                                            sizes="(max-width: 768px) 70vw, 42vw"
                                         />
                                         <div
                                             className={
@@ -222,9 +227,11 @@ export const AboutContent = () => {
                                             }%) scale(1) translateZ(0px)`,
                                         }}
                                     >
-                                        <img
+                                        <Image
                                             src='/images/uscan.webp'
                                             alt='U Scan @ NTU project'
+                                            fill
+                                            sizes="(max-width: 768px) 70vw, 42vw"
                                         />
                                         <div
                                             className={
@@ -277,9 +284,11 @@ export const AboutContent = () => {
                                             }%) scale(1) translateZ(0px)`,
                                         }}
                                     >
-                                        <img
+                                        <Image
                                             src='/images/mdp_poster.webp'
                                             alt='Multi Disclinary Path finder project poster'
+                                            fill
+                                            sizes="(max-width: 768px) 70vw, 42vw"
                                         />
                                         <div
                                             className={

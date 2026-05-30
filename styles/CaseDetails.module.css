@@ -277,6 +277,7 @@
 }
 
 .mdx_image_grid_item {
+    position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
     aspect-ratio: 16 / 9;
