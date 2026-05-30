@@ -64,8 +64,8 @@ const ResponsiveCardsLayout = () => {
             }
         }
 
-        setImageLists({
-            ...imageLists,
+        setImageLists((prev) => ({
+            ...prev,
             mobile: {
                 left: mobileLeft,
                 right: mobileRight,
@@ -76,7 +76,7 @@ const ResponsiveCardsLayout = () => {
                 right: right,
                 rightRight: rightRight,
             },
-        });
+        }));
     }, []);
 
     // for offset scrolling left and right columns
