@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "browse-portfolio",
+      "type": "read",
+      "description": "Browse Pratyum Jagannath's portfolio pages including case studies, about, and contact information.",
+      "url": "https://www.pratyum.xyz/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "read-case-studies",
+      "type": "read",
+      "description": "Access detailed project case studies and portfolio work.",
+      "url": "https://www.pratyum.xyz/cases",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-rss-feed",
+      "type": "read",
+      "description": "Fetch the RSS feed of portfolio updates in application/rss+xml format.",
+      "url": "https://www.pratyum.xyz/feed.xml",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-markdown",
+      "type": "read",
+      "description": "Fetch any portfolio page as Markdown by sending Accept: text/markdown in the request header.",
+      "url": "https://www.pratyum.xyz/api/markdown",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
