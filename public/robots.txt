@@ -1,0 +1,10 @@
+# robots.txt for pratyum.xyz
+# https://www.rfc-editor.org/rfc/rfc9309
+
+User-agent: *
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://www.pratyum.xyz/sitemap.xml
