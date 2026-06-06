@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import WebMCP from '@/components/WebMCP';
 import { AppContextProvider } from '@/context/AppContext';
 import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
           </Layout>
         </AppContextProvider>
         <Analytics debug={isDev} mode={isDev ? 'development' : 'production'} />
+        <WebMCP />
       </body>
     </html>
   );

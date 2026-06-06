@@ -1,0 +1,54 @@
+# robots.txt for pratyum.xyz
+# https://www.rfc-editor.org/rfc/rfc9309
+
+User-agent: *
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://www.pratyum.xyz/sitemap.xml
+
+# ---- Content Signals (draft-romm-aipref-contentsignals) ----
+# https://contentsignals.org/
+# Indexing and agent input are welcome; training on content is not.
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# ---- AI crawler rules ----
+# All AI crawlers are welcome to index public pages.
+# Training on site content is opt-out (see Content-Signal below).
+
+User-agent: GPTBot
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /.well-known/
+Disallow: /api/
+
+User-agent: Bytespider
+Allow: /
+Allow: /.well-known/
+Disallow: /api/

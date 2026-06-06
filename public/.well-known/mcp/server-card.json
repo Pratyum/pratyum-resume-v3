@@ -1,0 +1,46 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card.json",
+  "serverInfo": {
+    "name": "pratyum-xyz",
+    "version": "1.0.0",
+    "description": "MCP server for the Pratyum Jagannath portfolio site"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://www.pratyum.xyz/api/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "uri": "https://www.pratyum.xyz/",
+      "name": "Homepage",
+      "description": "Pratyum Jagannath's portfolio homepage",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://www.pratyum.xyz/cases",
+      "name": "Case Studies",
+      "description": "Project case studies and portfolio work",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://www.pratyum.xyz/about",
+      "name": "About",
+      "description": "About Pratyum Jagannath",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://www.pratyum.xyz/feed.xml",
+      "name": "RSS Feed",
+      "description": "RSS feed of portfolio updates",
+      "mimeType": "application/rss+xml"
+    }
+  ],
+  "contact": {
+    "url": "https://www.pratyum.xyz/contact"
+  }
+}

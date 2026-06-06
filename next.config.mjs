@@ -32,6 +32,20 @@ const nextConfig = {
   headers: async () => {
     return [
       {
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: [
+              '</.well-known/api-catalog>; rel="api-catalog"',
+              '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/skills-index"',
+              '</.well-known/mcp/server-card.json>; rel="https://modelcontextprotocol.io/rel/server-card"',
+              '</auth.md>; rel="auth-info"',
+            ].join(', '),
+          },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           {
