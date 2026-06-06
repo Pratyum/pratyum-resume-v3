@@ -2,7 +2,7 @@
   "name": "pratyum-resume-v3",
   "version": "0.2.1",
   "engines": {
-    "node": "24.x"
+    "node": "18.x"
   },
   "type": "module",
   "scripts": {
