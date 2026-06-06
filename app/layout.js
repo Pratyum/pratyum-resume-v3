@@ -49,7 +49,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Add your Google verification code
+    google: 'VRII_zEsBgBpo5KPDQCNZkeITgZbHzzPwg15Am4HD2A', // Add your Google verification code
   },
   icons: {
     icon: '/favicon.ico'
