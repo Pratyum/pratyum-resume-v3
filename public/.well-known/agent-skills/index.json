@@ -6,28 +6,28 @@
       "type": "read",
       "description": "Browse Pratyum Jagannath's portfolio pages including case studies, about, and contact information.",
       "url": "https://www.pratyum.xyz/",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "dfcfd6292a0c06961d0bba8a39c26bf97df2f44fe97414d9cc15d3e251bd32a9"
     },
     {
       "name": "read-case-studies",
       "type": "read",
       "description": "Access detailed project case studies and portfolio work.",
       "url": "https://www.pratyum.xyz/cases",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "7f04f6d8e052ec11af3875620a7c7c13bf993d3e8517e0cbf9d574e007d71e19"
     },
     {
       "name": "fetch-rss-feed",
       "type": "read",
       "description": "Fetch the RSS feed of portfolio updates in application/rss+xml format.",
       "url": "https://www.pratyum.xyz/feed.xml",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "dffae199a3283ca0655c3e7cb0c469cfbf4ec55b71acc2932691f9b1fae5f083"
     },
     {
       "name": "fetch-markdown",
       "type": "read",
       "description": "Fetch any portfolio page as Markdown by sending Accept: text/markdown in the request header.",
       "url": "https://www.pratyum.xyz/api/markdown",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "d0cf96f113799c5d151ba2a4ba1c79ca7b503442bee158001c74da9e3eb815ea"
     }
   ]
 }

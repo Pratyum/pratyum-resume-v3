@@ -32,4 +32,4 @@ None required for public read access.
 
 ## Contact
 
-For questions about agent access, open an issue at <https://github.com/pratyum> or use the contact form at <https://www.pratyum.xyz/contact>.
+For questions about agent access, open an issue at <https://github.com/Pratyum/pratyum-resume-v3/issues> or use the contact form at <https://www.pratyum.xyz/contact>.

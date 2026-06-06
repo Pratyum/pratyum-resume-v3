@@ -4,7 +4,7 @@ const BASE = 'https://www.pratyum.xyz';
 
 const metadata = {
   resource: BASE,
-  authorization_servers: [`${BASE}/.well-known/openid-configuration`],
+  authorization_servers: [BASE],
   scopes_supported: ['openid', 'profile'],
   bearer_methods_supported: ['header'],
   resource_documentation: `${BASE}/about`,
