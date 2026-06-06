@@ -1,0 +1,32 @@
+{
+  "$comment": "DNS for AI Discovery (DNS-AID) configuration reference. These records must be published via your DNS provider. See https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/",
+  "domain": "pratyum.xyz",
+  "records": [
+    {
+      "name": "_index._agents.pratyum.xyz",
+      "type": "HTTPS",
+      "priority": 1,
+      "target": "pratyum.xyz",
+      "params": {
+        "alpn": "h2,h3",
+        "endpoint": "/.well-known/agent-skills/index.json"
+      },
+      "description": "Primary agent skills discovery index"
+    },
+    {
+      "name": "_a2a._agents.pratyum.xyz",
+      "type": "HTTPS",
+      "priority": 1,
+      "target": "pratyum.xyz",
+      "params": {
+        "alpn": "h2,h3",
+        "endpoint": "/.well-known/mcp/server-card.json"
+      },
+      "description": "Agent-to-agent MCP server card endpoint"
+    }
+  ],
+  "dnssec": {
+    "required": true,
+    "note": "Sign the _agents zone with DNSSEC so validating resolvers return authenticated data."
+  }
+}
