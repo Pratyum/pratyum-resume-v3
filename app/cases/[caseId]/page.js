@@ -3,7 +3,8 @@ import CaseDetailsClient from './CaseDetailsClient';
 import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
-  const caseData = await getCaseData(params.caseId);
+  const resolvedParams = await params;
+  const caseData = await getCaseData(resolvedParams.caseId);
   const { frontMatter } = caseData;
   if (!caseData?.frontMatter) {
     return {
@@ -42,13 +43,14 @@ export async function generateMetadata({ params }) {
       images: [frontMatter.url],
     },
     alternates: {
-      canonical: `https://pratyum.xyz/cases/${params.caseId}`,
+      canonical: `https://www.pratyum.xyz/cases/${resolvedParams.caseId}`,
     },
   };
 }
 
 export default async function CaseDetails({ params }) {
-  const caseData = await getCaseData(params.caseId);
+  const resolvedParams = await params;
+  const caseData = await getCaseData(resolvedParams.caseId);
   // Guard against missing case data
   if (!caseData || !caseData.frontMatter) {
     // Handle missing case data (redirect or show error)
@@ -67,5 +69,5 @@ export default async function CaseDetails({ params }) {
   if (!nextCase && allCases.length > 0) {
     nextCase = allCases[0];
   }
-  return <Suspense fallback={<div>Loading...</div>}><CaseDetailsClient caseId={params.caseId} caseData={caseData} nextCase={nextCase} /></Suspense>;
+  return <Suspense fallback={<div>Loading...</div>}><CaseDetailsClient caseId={resolvedParams.caseId} caseData={caseData} nextCase={nextCase} /></Suspense>;
 }

@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useRef, useState, useEffect } from 'react';
+'use client'
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import styles from '../styles/ResponsiveCardsLayout.module.css';
 import { aboutData } from '../assets/data/about-data';
 import { useAppContext } from '../context/AppContext';
@@ -16,21 +15,8 @@ const ResponsiveCardsLayout = () => {
     const [percentToScroll, setPercentToScroll] = useState(0);
     const [colHeightDiff, setColHeightDiff] = useState(0);
 
-    const [imageLists, setImageLists] = useState({
-        mobile: {
-            left: [],
-            right: [],
-        },
-        desktop: {
-            leftLeft: [],
-            left: [],
-            right: [],
-            rightRight: [],
-        },
-    });
-
     // filter casesData then divide into 2(mobile) and 4(desktop) columns
-    useEffect(() => {
+    const imageLists = useMemo(() => {
         const faceData = aboutData.sectionFourData.faceImages;
 
         let mobileLeft = [];
@@ -64,8 +50,7 @@ const ResponsiveCardsLayout = () => {
             }
         }
 
-        setImageLists((prev) => ({
-            ...prev,
+        return {
             mobile: {
                 left: mobileLeft,
                 right: mobileRight,
@@ -76,7 +61,7 @@ const ResponsiveCardsLayout = () => {
                 right: right,
                 rightRight: rightRight,
             },
-        }));
+        };
     }, []);
 
     // for offset scrolling left and right columns
@@ -85,7 +70,7 @@ const ResponsiveCardsLayout = () => {
             if (!leftColRef.current || !rightColRef.current) return;
             setColHeightDiff(
                 leftColRef.current.offsetHeight -
-                    rightColRef.current.offsetHeight
+                rightColRef.current.offsetHeight
             );
             const totalContainerHeight = containerRef?.current?.offsetHeight;
             const rightColOffsetTop = rightColRef.current.offsetTop;

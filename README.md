@@ -1,1 +1,1 @@
-https://pratyum.xyz
+https://www.pratyum.xyz

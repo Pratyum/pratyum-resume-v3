@@ -5,6 +5,7 @@ import styles from "@/styles/About.module.css";
 import SlidingText from "./SlidingText";
 import ResponsiveCardsLayout from "./ResponsiveCardsLayout";
 import Image from "next/image";
+import Link from "next/link";
 
 export const AboutContent = () => {
     const {
@@ -150,11 +151,11 @@ export const AboutContent = () => {
                                         I believe in optimal programming while I build knowledge base in specific areas viz. web development and embedded technology – the gateway for the future.
                                         </div>
                                         <div className={styles.section3_link}>
-                                            <a href='#'>
+                                            <Link href='#'>
                                                 <SlidingText
                                                     text={'read manifesto'}
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -330,9 +331,9 @@ export const AboutContent = () => {
                         {"Innovation distinguishes between a leader and a follower. I strive to be innovative in everything I do, pushing the boundaries of what's possible in technology."}
                     </p>
                     <div>
-                        <a href='#'>
+                        <Link href='#'>
                             <SlidingText text={'PJ'} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <ResponsiveCardsLayout />
@@ -369,9 +370,9 @@ export const AboutContent = () => {
                             <div className={styles.section6_text_wrapper}>
                                 <p>{item.text}</p>
                                 {item.link && (
-                                    <a href='#'>
+                                    <Link href='#'>
                                         <SlidingText text={item.link} />
-                                    </a>
+                                    </Link>
                                 )}
                             </div>
                         </li>
@@ -384,17 +385,17 @@ export const AboutContent = () => {
                 <div className={styles.section7_wrapper}>
                     <div className={styles.section7_text_wrapper}>
                         <h2>Wanna Say Hi?</h2>
-                        <a href='/contact'>
+                        <Link href='/contact'>
                             <SlidingText text={'reach out'} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.section7_wrapper}>
                     <div className={styles.section7_text_wrapper}>
                         <h2>Check out my projects</h2>
-                        <a href='/cases'>
+                        <Link href='/cases'>
                             <SlidingText text={'Click here'} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

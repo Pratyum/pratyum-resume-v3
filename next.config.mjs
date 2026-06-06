@@ -67,20 +67,6 @@ const nextConfig = {
   // Generate static HTML files when possible
   output: 'standalone',
   poweredByHeader: false,
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-    // Add this when you're ready to support multiple languages:
-    // locales: ['en', 'fr', 'es'],
-    // Domains for localization (optional)
-    domains: [
-      {
-        domain: 'pratyum.xyz',
-        defaultLocale: 'en',
-      },
-      // Add other domains for other languages when needed
-    ],
-  },
 }
 const withMDX = createMDX({
   extension: /\.(md|mdx)$/,

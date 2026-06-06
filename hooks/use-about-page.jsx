@@ -40,6 +40,7 @@ export const useAboutPage = () => {
 
         // clean up
         return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- sec1Height is derived from context, scroll handler reads current value
     }, []);
 
     // section 3 scroll animation
@@ -60,7 +61,6 @@ export const useAboutPage = () => {
         // clean up
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
-
 
     return {
         sectionOneImages,

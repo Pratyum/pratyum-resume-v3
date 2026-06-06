@@ -10,6 +10,7 @@ export const useAppContext = () => useContext(AppContext);
 export const AppContextProvider = ({ children }) => {
     const [view, setView] = useState('');
 
+    /* eslint-disable react-hooks/set-state-in-effect -- Initial sync with external system (window.matchMedia) */
     useEffect(() => {
         if (window.matchMedia('(max-width: 1024px)').matches) {
             setView('mobile');
@@ -39,6 +40,7 @@ export const AppContextProvider = ({ children }) => {
                 }
             });
     }, []);
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -49,6 +51,8 @@ export const AppContextProvider = ({ children }) => {
     const pathname = usePathname();
     const [isCaseDetailPage, setIsCaseDetailPage] = useState(false);
     const [caseId, setCaseId] = useState('');
+
+    /* eslint-disable react-hooks/set-state-in-effect -- Sync with Next.js router (pathname) */
     useEffect(() => {
         const pathParts = pathname.split('/');
         const caseIdFromPath = pathParts[2]; // cases/[caseId] -> index 2
@@ -60,6 +64,7 @@ export const AppContextProvider = ({ children }) => {
             setCaseId('');
         }
     }, [pathname]);
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     const [scrollDir, setScrollDir] = useState('');
 

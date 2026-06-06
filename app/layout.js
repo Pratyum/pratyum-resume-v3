@@ -4,7 +4,7 @@ import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
-  metadataBase: new URL('https://pratyum.xyz'),
+  metadataBase: new URL('https://www.pratyum.xyz'),
   title: {
     template: '%s | Pratyum Jagannath - Full Stack Developer',
     default: 'Pratyum Jagannath - Full Stack Developer & Web3 Enthusiast',
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pratyum.xyz',
+    url: 'https://www.pratyum.xyz',
     siteName: 'Pratyum Jagannath Portfolio',
     title: 'Pratyum Jagannath - Full Stack Developer & Web3 Enthusiast',
     description: 'Pratyum Jagannath is a Full Stack Developer specialized in React, Node.js, Python, and Web3 technologies with experience in building innovative applications.',
