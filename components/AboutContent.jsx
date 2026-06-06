@@ -10,6 +10,8 @@ import Link from "next/link";
 export const AboutContent = () => {
     const {
         sectionOneImages,
+        sectionThreeData,
+        sectionFourData,
         sectionFiveData,
         sectionSixData,
         sec1ScrollPercent,
@@ -151,11 +153,17 @@ export const AboutContent = () => {
                                         I believe in optimal programming while I build knowledge base in specific areas viz. web development and embedded technology – the gateway for the future.
                                         </div>
                                         <div className={styles.section3_link}>
-                                            <Link href='#'>
+                                            {sectionThreeData?.href ? (
+                                                <Link href={sectionThreeData.href}>
+                                                    <SlidingText
+                                                        text={sectionThreeData?.linkText || 'read manifesto'}
+                                                    />
+                                                </Link>
+                                            ) : (
                                                 <SlidingText
-                                                    text={'read manifesto'}
+                                                    text={sectionThreeData?.linkText || 'read manifesto'}
                                                 />
-                                            </Link>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -331,9 +339,13 @@ export const AboutContent = () => {
                         {"Innovation distinguishes between a leader and a follower. I strive to be innovative in everything I do, pushing the boundaries of what's possible in technology."}
                     </p>
                     <div>
-                        <Link href='#'>
-                            <SlidingText text={'PJ'} />
-                        </Link>
+                        {sectionFourData?.href ? (
+                            <Link href={sectionFourData.href}>
+                                <SlidingText text={sectionFourData?.linkText || 'PJ'} />
+                            </Link>
+                        ) : (
+                            <SlidingText text={sectionFourData?.linkText || 'PJ'} />
+                        )}
                     </div>
                 </div>
                 <ResponsiveCardsLayout />
@@ -370,9 +382,13 @@ export const AboutContent = () => {
                             <div className={styles.section6_text_wrapper}>
                                 <p>{item.text}</p>
                                 {item.link && (
-                                    <Link href='#'>
+                                    item.href ? (
+                                        <Link href={item.href}>
+                                            <SlidingText text={item.link} />
+                                        </Link>
+                                    ) : (
                                         <SlidingText text={item.link} />
-                                    </Link>
+                                    )
                                 )}
                             </div>
                         </li>

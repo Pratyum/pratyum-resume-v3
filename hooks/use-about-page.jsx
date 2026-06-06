@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 export const useAboutPage = () => {
     const { view } = useAppContext();
     const sec1Height = view === 'mobile' ? 830 : 388;
-    const { sectionOneImages, sectionFiveData, sectionSixData } = aboutData;
+    const { sectionOneImages, sectionThreeData, sectionFourData, sectionFiveData, sectionSixData } = aboutData;
 
     const section1Ref = useRef();
     const section3Ref = useRef();
@@ -64,6 +64,8 @@ export const useAboutPage = () => {
 
     return {
         sectionOneImages,
+        sectionThreeData,
+        sectionFourData,
         sectionFiveData,
         sectionSixData,
         sec1ScrollPercent,

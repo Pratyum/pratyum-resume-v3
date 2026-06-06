@@ -6,7 +6,7 @@
       "command": [
         "npx",
         "-y",
-        "next-devtools-mcp@latest"
+        "next-devtools-mcp@0.3.10"
       ],
       "enabled": true,
       "environment": {}
