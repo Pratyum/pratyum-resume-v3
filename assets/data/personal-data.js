@@ -4,9 +4,9 @@ export const personData = {
   "name": "Pratyum Jagannath",
   "alternateName": "PJ",
   "description": "Full Stack Developer & Web3 Enthusiast",
-  "image": "https://pratyum.xyz/images/profile-photo.jpg", // Update with actual image
+  "image": "https://www.pratyum.xyz/images/profile-photo.jpg", // Update with actual image
   "jobTitle": "Full Stack Developer",
-  "url": "https://pratyum.xyz",
+  "url": "https://www.pratyum.xyz",
   "sameAs": [
     "https://linkedin.com/in/pratyumjagannath", // Update with actual links
     "https://github.com/pratyum",

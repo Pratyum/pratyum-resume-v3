@@ -1,13 +1,13 @@
 'use client'
 import { useAppContext } from "@/context/AppContext";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import CaseCards from "./CaseCards";
 import Filter from "./Filter";
 import styles from '@/styles/Cases.module.css';
 import { motion } from 'framer-motion';
 
-export const CaseContent = ({cases}) => {
+export const CaseContent = ({ cases }) => {
     const DESKTOP_RIGHT_RIGHT_SPEED = 2.81;
     const { view, isFilterOpen, setIsFilterOpen, selectedFilter } =
         useAppContext();
@@ -18,21 +18,8 @@ export const CaseContent = ({cases}) => {
     const [percentToScroll, setPercentToScroll] = useState(0);
     const [colHeightDiff, setColHeightDiff] = useState(0);
 
-    const [imageLists, setImageLists] = useState({
-        mobile: {
-            left: [],
-            right: [],
-        },
-        desktop: {
-            leftLeft: [],
-            left: [],
-            right: [],
-            rightRight: [],
-        },
-    });
-
     // filter casesData then divide into 2(mobile) and 4(desktop) columns
-    useEffect(() => {
+    const imageLists = useMemo(() => {
         const filteredCases = cases.filter((caseData) =>
             caseData.filterBy.includes(selectedFilter)
         );
@@ -72,8 +59,7 @@ export const CaseContent = ({cases}) => {
             }
         }
 
-        setImageLists(prev => ({
-            ...prev,
+        return {
             mobile: {
                 left: mobileLeft,
                 right: mobileRight,
@@ -84,8 +70,8 @@ export const CaseContent = ({cases}) => {
                 right: right,
                 rightRight: rightRight,
             },
-        }));
-    }, [selectedFilter, cases]);
+        };
+    }, [cases, selectedFilter]);
 
     const getTotalScrollable = () =>
         document.documentElement.scrollHeight - window.innerHeight;
@@ -95,7 +81,7 @@ export const CaseContent = ({cases}) => {
         if (leftColRef.current && rightColRef.current) {
             setColHeightDiff(
                 leftColRef.current.offsetHeight -
-                    rightColRef.current.offsetHeight
+                rightColRef.current.offsetHeight
             );
         }
 
@@ -109,7 +95,7 @@ export const CaseContent = ({cases}) => {
             if (scrolledAmount >= rightColOffsetTop) {
                 setPercentToScroll(
                     (scrolledAmount - rightColOffsetTop) /
-                        totalScrollableAfterEl
+                    totalScrollableAfterEl
                 );
             } else {
                 setPercentToScroll(0);
@@ -120,7 +106,7 @@ export const CaseContent = ({cases}) => {
 
         // clean up
         return () => window.removeEventListener('scroll', onScroll);
-    }, [imageLists, view]);
+    }, [view]);
 
     const handleCardClick = () => {
         // make sure filter is closed in context
@@ -179,8 +165,8 @@ export const CaseContent = ({cases}) => {
                                                 isBlurred={
                                                     selectedFilter
                                                         ? !caseData.filterBy.includes(
-                                                              selectedFilter
-                                                          )
+                                                            selectedFilter
+                                                        )
                                                         : false
                                                 }
                                             />
@@ -203,9 +189,8 @@ export const CaseContent = ({cases}) => {
                                 isFilterOpen && styles.move_right_col,
                             ].join(' ')}
                             style={{
-                                transform: `translateY(${
-                                    percentToScroll * colHeightDiff
-                                }px)`,
+                                transform: `translateY(${percentToScroll * colHeightDiff
+                                    }px)`,
                             }}
                         >
                             {imageLists.mobile.right.map((caseData, idx) => {
@@ -223,8 +208,8 @@ export const CaseContent = ({cases}) => {
                                                 isBlurred={
                                                     selectedFilter
                                                         ? !caseData.filterBy.includes(
-                                                              selectedFilter
-                                                          )
+                                                            selectedFilter
+                                                        )
                                                         : false
                                                 }
                                             />
@@ -267,8 +252,8 @@ export const CaseContent = ({cases}) => {
                                                     isBlurred={
                                                         selectedFilter
                                                             ? !caseData.filterBy.includes(
-                                                                  selectedFilter
-                                                              )
+                                                                selectedFilter
+                                                            )
                                                             : false
                                                     }
                                                 />
@@ -291,9 +276,8 @@ export const CaseContent = ({cases}) => {
                                 isFilterOpen && styles.move_left_col,
                             ].join(' ')}
                             style={{
-                                translate: `0 ${
-                                    percentToScroll * colHeightDiff
-                                }px`,
+                                translate: `0 ${percentToScroll * colHeightDiff
+                                    }px`,
                             }}
                         >
                             {imageLists.desktop.left.map((caseData, idx) => {
@@ -311,8 +295,8 @@ export const CaseContent = ({cases}) => {
                                                 isBlurred={
                                                     selectedFilter
                                                         ? !caseData.filterBy.includes(
-                                                              selectedFilter
-                                                          )
+                                                            selectedFilter
+                                                        )
                                                         : false
                                                 }
                                             />
@@ -348,8 +332,8 @@ export const CaseContent = ({cases}) => {
                                                 isBlurred={
                                                     selectedFilter
                                                         ? !caseData.filterBy.includes(
-                                                              selectedFilter
-                                                          )
+                                                            selectedFilter
+                                                        )
                                                         : false
                                                 }
                                             />
@@ -370,9 +354,8 @@ export const CaseContent = ({cases}) => {
                                 isFilterOpen && styles.move_right_col,
                             ].join(' ')}
                             style={{
-                                translate: `0 ${
-                                    percentToScroll * colHeightDiff * DESKTOP_RIGHT_RIGHT_SPEED
-                                }px`,
+                                translate: `0 ${percentToScroll * colHeightDiff * DESKTOP_RIGHT_RIGHT_SPEED
+                                    }px`,
                             }}
                         >
                             {imageLists.desktop.rightRight.map(
@@ -393,8 +376,8 @@ export const CaseContent = ({cases}) => {
                                                     isBlurred={
                                                         selectedFilter
                                                             ? !caseData.filterBy.includes(
-                                                                  selectedFilter
-                                                              )
+                                                                selectedFilter
+                                                            )
                                                             : false
                                                     }
                                                 />

@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 export const useAboutPage = () => {
     const { view } = useAppContext();
     const sec1Height = view === 'mobile' ? 830 : 388;
-    const { sectionOneImages, sectionFiveData, sectionSixData } = aboutData;
+    const { sectionOneImages, sectionThreeData, sectionFourData, sectionFiveData, sectionSixData } = aboutData;
 
     const section1Ref = useRef();
     const section3Ref = useRef();
@@ -40,6 +40,7 @@ export const useAboutPage = () => {
 
         // clean up
         return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- sec1Height is derived from context, scroll handler reads current value
     }, []);
 
     // section 3 scroll animation
@@ -61,9 +62,10 @@ export const useAboutPage = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-
     return {
         sectionOneImages,
+        sectionThreeData,
+        sectionFourData,
         sectionFiveData,
         sectionSixData,
         sec1ScrollPercent,

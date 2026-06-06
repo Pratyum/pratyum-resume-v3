@@ -1,7 +1,7 @@
 // app/feed.xml/route.js
 import { getAllCases } from '@/lib/mdx';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://pratyum.xyz';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.pratyum.xyz';
 export async function GET() {
   const cases = await getAllCases();
 

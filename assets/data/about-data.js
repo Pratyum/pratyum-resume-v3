@@ -14,8 +14,15 @@ export const aboutData = {
             altText: 'Pratyum @ SG',
         },
     ],
+    sectionThreeData: {
+        text: 'I believe in optimal programming while I build knowledge base in specific areas viz. web development and embedded technology – the gateway for the future.',
+        linkText: 'read manifesto',
+        href: null,
+    },
     sectionFourData: {
         faceImages: [],
+        linkText: 'PJ',
+        href: null,
     },
     sectionFiveData: [
         {
@@ -80,6 +87,7 @@ export const aboutData = {
             number: '20',
             text: 'Project Contributions',
             link: 'Check out my projects',
+            href: '/cases',
         },
         {
             number: '10',
