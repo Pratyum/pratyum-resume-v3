@@ -17,7 +17,21 @@ None required for public read access.
 ## OAuth / OIDC Discovery
 
 - OpenID Configuration: <https://www.pratyum.xyz/.well-known/openid-configuration>
+- Authorization Server Metadata: <https://www.pratyum.xyz/.well-known/oauth-authorization-server>
 - Protected Resource Metadata: <https://www.pratyum.xyz/.well-known/oauth-protected-resource>
+
+## agent_auth
+
+```json
+{
+  "register_uri": null,
+  "identity_types": ["anonymous"],
+  "credential_types": ["none"],
+  "claim_uri": null,
+  "revocation_uri": null,
+  "note": "All public endpoints are accessible without registration or credentials."
+}
+```
 
 ## Endpoints Accessible Without Authentication
 
